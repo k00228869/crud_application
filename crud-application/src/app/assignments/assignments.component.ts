@@ -8,16 +8,19 @@ import { ASSIGNMENTS } from '../test-assignments';
   styleUrls: ['./assignments.component.css']
 })
 export class AssignmentsComponent implements OnInit {
+  
   assignments = ASSIGNMENTS;
+  selectedAssignment: Assignment;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  selectedAssignment: Assignment;
+  
   
   onSelect(assignment: Assignment): void {
     this.selectedAssignment = assignment;
   }
+  //assigns the clicked assignment to the components selected assignment
 
 }
