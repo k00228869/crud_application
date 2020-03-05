@@ -9,14 +9,15 @@ import { ASSIGNMENTS } from '../test-assignments';
 })
 export class AssignmentsComponent implements OnInit {
   assignments = ASSIGNMENTS;
-  // assignments = ASSIGNMENTS = {
-  //   id: 1,
-  //   name: 'testName',
-  //   description: 'testDescription'
-  // };
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+  selectedAssignment: Assignment;
+  
+  onSelect(assignment: Assignment): void {
+    this.selectedAssignment = assignment;
   }
 
 }

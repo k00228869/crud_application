@@ -19,3 +19,12 @@
     background-color: #DDD;
     left: .1em;
   }
+
+  .assignments li.selected {
+    background-color: #CFD8DC;
+    color: white;
+  }
+  .assignments li.selected:hover {
+    background-color: #BBD8DC;
+    color: white;
+  }
