@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssignmentsComponent implements OnInit {
 
+  assignments = ASSIGNMENTS;
   constructor() { }
 
   ngOnInit(): void {
