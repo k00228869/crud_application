@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Assignment } from 'src/assignment';
 import { ASSIGNMENTS } from '../test-assignments';
+import { AssignmentService } from '../assignment.service';
 
 @Component({
   selector: 'app-assignments',
@@ -10,10 +11,10 @@ import { ASSIGNMENTS } from '../test-assignments';
 })
 export class AssignmentsComponent implements OnInit {
   
-  assignments: Assignment[] = [];
+  assignments: Assignment;
   
   
-  constructor() { }
+  constructor(assignmentService: AssignmentService) { }
 
   ngOnInit(): void {
   }

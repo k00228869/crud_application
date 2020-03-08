@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { AssignmentDetailComponent } from './assignment-detail/assignment-detail.component';
+import { AddAssignmentComponent } from './add-assignment/add-assignment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AssignmentsComponent,
-    AssignmentDetailComponent
+    AssignmentDetailComponent,
+    AddAssignmentComponent
   ],
   imports: [
     BrowserModule,
