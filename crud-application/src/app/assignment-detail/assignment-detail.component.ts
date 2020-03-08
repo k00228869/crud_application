@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Assignment } from 'src/assignment';
 
 @Component({
   selector: 'app-assignment-detail',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssignmentDetailComponent implements OnInit {
 
+  assignment:Assignment;
   constructor() { }
 
   ngOnInit(): void {
