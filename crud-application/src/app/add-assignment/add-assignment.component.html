@@ -1,1 +1,17 @@
-<p>add-assignment works!</p>
+<div *ngIf="assignment">
+
+    <h2>EDIT {{assignment.name | uppercase}}</h2>
+  
+    <div>
+      <label> Name:
+        <input [(ngModel)]="assignment.name" placeholder="name"/>
+      </label>
+    </div>
+    <div>
+      <label> Description:
+        <input [(ngModel)]="assignment.description" placeholder="description"/>
+      </label>
+    </div>
+    
+  
+  </div>
