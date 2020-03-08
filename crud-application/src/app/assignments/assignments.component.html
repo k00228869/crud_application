@@ -1,8 +1,10 @@
 <h2>My Assignments</h2>
 
 <ul class="assignments">
-    <li *ngFor="let assignment of assignments"><a routerLink="/addAssignment/{{assignment.id}}"></a>
-    <span class="badge">{{assignment.id}}</span>
-        {{assignment.name}}
+    <li *ngFor="let assignment of assignments">
+        <a routerLink="/assignmentDetail/{{assignment.id}}">
+            <span class="badge">{{assignment.id}}</span>
+            {{assignment.name}}
+        </a>
     </li>
 </ul>

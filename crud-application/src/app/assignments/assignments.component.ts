@@ -10,7 +10,7 @@ import { ASSIGNMENTS } from '../test-assignments';
 })
 export class AssignmentsComponent implements OnInit {
   
-  // assignments: Assignment[];
+  assignments: Assignment[];
   
 
   constructor() { }
