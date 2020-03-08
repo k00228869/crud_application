@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Assignment } from '../assignment';
+// import { Assignment }         from '../assignment';
 import { ASSIGNMENTS } from '../test-assignments';
 
 @Component({
@@ -9,8 +9,8 @@ import { ASSIGNMENTS } from '../test-assignments';
 })
 export class AssignmentsComponent implements OnInit {
   
-  assignments = ASSIGNMENTS;
-  selectedAssignment: Assignment;
+  assignments: Assignment[];
+  
 
   constructor() { }
 
@@ -18,9 +18,7 @@ export class AssignmentsComponent implements OnInit {
   }
   
   
-  onSelect(assignment: Assignment): void {
-    this.selectedAssignment = assignment;
-  }
+  
   //assigns the clicked assignment to the components selected assignment
 
 }

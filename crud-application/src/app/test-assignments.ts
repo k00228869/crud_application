@@ -1,4 +1,4 @@
-import { Assignment } from './assignment';
+import { Assignment } from 'src/assignment';
 
 export const ASSIGNMENTS: Assignment[] = [
   { id: 1, name: 'assignment1', description: ''},
