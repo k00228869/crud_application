@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Assignment } from 'src/assignment';
-import { ASSIGNMENTS } from '../test-assignments';
 import { AssignmentService } from '../assignment.service';
+import { Assignment } from 'src/assignment';
+
 
 @Component({
   selector: 'app-assignments',
@@ -11,16 +11,29 @@ import { AssignmentService } from '../assignment.service';
 })
 export class AssignmentsComponent implements OnInit {
   
-  assignments: Assignment;
-  
+  assignments: Assignment[];
+  assignmentService: any;
   
   constructor(assignmentService: AssignmentService) { }
 
   ngOnInit(): void {
+    console.log('HttpDemoComponent::ngOnInit()');
+
+    this.assignmentService.getAssignments().subscribe(
+      data => {console.log(data)
+      this.assignments = data;
+    });
   }
   
-  
-  
-  //assigns the clicked assignment to the components selected assignment
+  public addNewAssignment(newAssignmentTitle: string, newAssignmentDescription: string)
+{
+    let assignments: Assignment = {id: null, name: newAssignmentTitle, description: newAssignmentDescription};
+
+	  this.assignmentService.addAssignment(assignments).subscribe(   
+      newAssignment => { 
+        console.log(JSON.stringify(newAssignment));
+        this.assignments.push(newAssignment); }
+    );
+}
 
 }
