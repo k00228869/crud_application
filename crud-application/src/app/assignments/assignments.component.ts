@@ -4,6 +4,7 @@ import { AssignmentService } from '../assignment.service';
 import { Assignment } from 'src/assignment';
 
 
+
 @Component({
   selector: 'app-assignments',
   templateUrl: './assignments.component.html',
@@ -12,7 +13,7 @@ import { Assignment } from 'src/assignment';
 export class AssignmentsComponent implements OnInit {
   
   assignments: Assignment[];
-  assignmentService: any;
+  // assignmentService: any;
   
   constructor(assignmentService: AssignmentService) { }
 
