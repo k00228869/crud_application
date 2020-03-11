@@ -10,7 +10,7 @@ import { Assignment} from 'src/assignment';
 })
 export class AssignmentDetailComponent implements OnInit {
 
-  assignment:Assignment;
+  private assignments: Assignment;
 
   constructor(
     assignmentService: AssignmentService) { }

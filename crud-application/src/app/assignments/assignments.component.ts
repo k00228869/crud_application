@@ -12,29 +12,15 @@ import { Assignment } from 'src/assignment';
 })
 export class AssignmentsComponent implements OnInit {
   
-  private assignments: Assignment[];
-  // assignmentService: any;
+  private assignments: Assignment;
+  
   
   constructor(private assignmentService: AssignmentService) { }
 
   ngOnInit(): void {
-    console.log('HttpDemoComponent::ngOnInit()');
-
-    this.assignmentService.getAssignments().subscribe(
-      data => {console.log(data)
-      this.assignments = data;
-    });
+    
   }
   
-  public addNewAssignment(newAssignmentTitle: string, newAssignmentDescription: string)
-{
-    let assignments: Assignment = {id: null, name: newAssignmentTitle, description: newAssignmentDescription};
-
-	  this.assignmentService.addAssignment(assignments).subscribe(   
-      newAssignment => { 
-        console.log(JSON.stringify(newAssignment));
-        this.assignments.push(newAssignment); }
-    );
-}
+  
 
 }
