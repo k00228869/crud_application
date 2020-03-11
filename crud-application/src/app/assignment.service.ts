@@ -26,6 +26,6 @@ export class AssignmentService {
 
   public getAssignment(assignment: Assignment): Observable<Assignment>
   {
-    
+    return this.http.post<Assignment>(this.webURI, assignment, this.httpOp); //posting to database
   }
 }
