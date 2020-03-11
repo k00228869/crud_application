@@ -12,10 +12,10 @@ import { Assignment } from 'src/assignment';
 })
 export class AssignmentsComponent implements OnInit {
   
-  assignments: Assignment[];
+  private assignments: Assignment[];
   // assignmentService: any;
   
-  constructor(assignmentService: AssignmentService) { }
+  constructor(private assignmentService: AssignmentService) { }
 
   ngOnInit(): void {
     console.log('HttpDemoComponent::ngOnInit()');
