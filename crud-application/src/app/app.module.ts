@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { AssignmentDetailComponent } from './assignment-detail/assignment-detail.component';
 import { AddAssignmentComponent } from './add-assignment/add-assignment.component';
-import { AssignmentService } from './assignment.service';
+import { AddAssignmentService } from './add-assignment.service';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { AssignmentService } from './assignment.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AssignmentService],
+  providers: [AddAssignmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
