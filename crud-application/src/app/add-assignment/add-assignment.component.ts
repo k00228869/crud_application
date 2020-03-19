@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { Assignment } from 'src/assignment';
 import { AddAssignmentService } from '../add-assignment.service';
 import { Assignment } from 'src/assignment';
 

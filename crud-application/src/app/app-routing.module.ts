@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { HttpClientModule }    from '@angular/common/http';
 // import { Assignment } from 'src/assignment';
 import { AssignmentDetailComponent } from './assignment-detail/assignment-detail.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
@@ -14,7 +14,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    HttpClientModule,
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
