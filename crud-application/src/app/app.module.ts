@@ -8,8 +8,10 @@ import { AppComponent } from './app.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { AssignmentDetailComponent } from './assignment-detail/assignment-detail.component';
 import { AddAssignmentComponent } from './add-assignment/add-assignment.component';
-import { AddAssignmentService } from './add-assignment.service';
-
+import { AddAssignmentService } from './add-assignment/add-assignment.service';
+import { AssignmentService } from './assignments/assignment.service';
+// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { InMemoryDataService }  from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { AddAssignmentService } from './add-assignment.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AddAssignmentService],
+  providers: [AddAssignmentService,
+  AssignmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,12 +4,12 @@
   
     <div>
       <label> Name:
-        <input type ="text" #newAssignment placeholder="name"/>
+        <input type ="text" #newAssignment placeholder="Assignment name"/>
       </label>
     </div>
     <div>
       <label> Description:
-        <input type ="text" #newAssignment placeholder="description"/>
+        <input type ="text" #newAssignment placeholder="Assignment description"/>
       </label>
     </div>
     <button (click)="addAssignment(newAssignment.value); newAssignment.value=''">Save Assignment</button> 

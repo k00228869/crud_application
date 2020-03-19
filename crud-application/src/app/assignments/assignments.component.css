@@ -8,7 +8,7 @@
     cursor: pointer;
     position: relative;
     left: 0;
-    background-color: #EEE;
+    background-color: rgb(187, 225, 231);
     margin: .5em;
     padding: .3em 0;
     height: 1.6em;
@@ -16,7 +16,7 @@
   }
   .assignments li:hover {
     color: #607D8B;
-    background-color: #DDD;
+    background-color: rgb(247, 239, 239);
     left: .1em;
   }
 
@@ -29,7 +29,7 @@
   }
 
   .assignments a:hover {
-    color:#607D8B;
+    color:rgb(33, 33, 34);
   }
   
   .assignments .badge {
@@ -37,7 +37,7 @@
     font-size: small;
     color: white;
     padding: 0.8em 0.7em 0 0.7em;
-    background-color:#405061;
+    background-color:#3c8add;
     line-height: 1em;
     position: relative;
     left: -1px;
