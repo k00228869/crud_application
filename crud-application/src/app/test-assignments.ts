@@ -1,6 +1,6 @@
-import { Assignment } from 'src/assignment';
+import { Assignment } from 'src/Assignment';
 
-export const ASSIGNMENTS: Assignment[] = [
+export const ADDASSIGNMENTS: Assignment[] = [
   { id: 1, name: 'assignment1', description: ''},
   { id: 2, name: 'assignment2', description: ''},
   { id: 3, name: 'assignment3', description: '' },

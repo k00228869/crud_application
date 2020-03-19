@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AddAssignmentService } from '../add-assignment.service';
-// import { AssignmentService } from '../assignment.service';
-import { AddAssignment } from '../add-assignment';
+import { AssignmentService } from '../assignment.service';
+import { Assignment } from 'src/assignment';
 
 
 
@@ -12,7 +12,7 @@ import { AddAssignment } from '../add-assignment';
 })
 export class AssignmentsComponent implements OnInit {
   
-  private addassignments: AddAssignment;
+  private assignments: Assignment;
   
   
   constructor(private addassignmentService: AddAssignmentService) { }

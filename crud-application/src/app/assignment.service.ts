@@ -24,7 +24,7 @@ export class AssignmentService {
     return this.http.get<Assignment[]>(this.webURI); //return array of assignments
   }
 
-  public getAssignment(assignment: Assignment): Observable<Assignment>
+  public getAssignment(assignment:Assignment): Observable<Assignment>
   {
     return this.http.post<Assignment>(this.webURI, assignment, this.httpOp); //posting to database
   }

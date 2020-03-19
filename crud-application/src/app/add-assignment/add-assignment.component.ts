@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Assignment } from 'src/assignment';
+// import { Assignment } from 'src/assignment';
 import { AddAssignmentService } from '../add-assignment.service';
-import { AddAssignment } from '../add-assignment';
+import { Assignment } from 'src/assignment';
 
 
 
@@ -12,7 +12,7 @@ import { AddAssignment } from '../add-assignment';
 })
 export class AddAssignmentComponent implements OnInit {
 
-  private addassignments: AddAssignment[];
+  private assignments: Assignment[];
   
 
   constructor(private addassignmentService: AddAssignmentService) { }
@@ -20,21 +20,21 @@ export class AddAssignmentComponent implements OnInit {
   ngOnInit(): void {
     console.log('HttpDemoComponent::ngOnInit()');
 
-    this.addassignmentService.getAddAssignments().subscribe(data => {
+    this.addassignmentService.getAssignments().subscribe(data => {
       console.log(data);
-      this.addassignments = data;
+      this.assignments = data;
     });
   }
 
   public addNewAssignment(newAssignmentTitle: string, newAssignmentDescription: string) 
 {
-    let addassignments: AddAssignment = {id: null, name: newAssignmentTitle, description: newAssignmentDescription}; //create an assignment object with id of 0
+    let addassignment: Assignment = {id: null, name: newAssignmentTitle, description: newAssignmentDescription}; //create an assignment object with id of 0
 
-	  this.addassignmentService.addAssignment(addassignments).subscribe(
+	  this.addassignmentService.addAssignment(addassignment).subscribe(
       newAssignment => 
       { 
         console.log(JSON.stringify(newAssignment));
-        this.addassignments.push(newAssignment); 
+        this.assignments.push(newAssignment); 
       }
     );
 }
