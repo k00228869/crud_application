@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import{ Assignment } from '../../assignment';
+import{ Assignment } from '../assignment';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class AssignmentService {
 
-  assignmentsUrl = 'api/assignments'; //url to api
-  // private webURI: string = 'api/assignments';
+  // assignmentsUrl = 'api/assignments'; //url to api
+  private webURI: string = 'api/assignments';
 
   private httpOp = {
     //specifying content format is json
@@ -18,19 +18,21 @@ export class AssignmentService {
 
   constructor(private http: HttpClient) { 
     console.log('HTTPDemoService ::constructor()');
-    // this.addassignmentService.getAssignments().subscribe(data => {
-    //   console.log(data);
-    //   this.assignments = data;
-    // });
   }
 
   public getAssignments(): Observable<Assignment[]>
   {
-    return this.http.get<Assignment[]>(this.assignmentsUrl); //get array of assignments from the server
+    return this.http.get<Assignment[]>(this.webURI); //get array of assignments from the server
   }
 
   public getAssignment(assignment:Assignment): Observable<Assignment>
   {
-    return this.http.post<Assignment>(this.assignmentsUrl, assignment, this.httpOp); //posting to database
+    let url:string = this.webURI + "/" + assignment.id;
+    return this.http.post<Assignment>(this.webURI, assignment, this.httpOp); //posting to database
+  }
+
+  public addAssignment(assignment: Assignment): Observable<Assignment>
+  {
+    return this.http.post<Assignment>(this.webURI, assignment, this.httpOp); //posting to db
   }
 }

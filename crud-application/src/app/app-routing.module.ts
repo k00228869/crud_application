@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule }    from '@angular/common/http';
-// import { Assignment } from 'src/assignment';
+
 import { AssignmentDetailComponent } from './assignment-detail/assignment-detail.component';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { AddAssignmentComponent } from './add-assignment/add-assignment.component';
@@ -9,8 +9,8 @@ import { AddAssignmentComponent } from './add-assignment/add-assignment.componen
 const routes: Routes = [
   { path: 'assignments', component: AssignmentsComponent},
   // { path: 'edit/id', component: EditAssignmentComponent},
-  { path: 'add/id', component: AddAssignmentComponent},
-  { path: 'detail/id', component: AssignmentDetailComponent}
+  { path: 'add-assignment/id', component: AddAssignmentComponent},
+  { path: 'assignment-detail/id', component: AssignmentDetailComponent}
 ];
 
 @NgModule({

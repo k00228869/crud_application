@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AddAssignmentService } from '../add-assignment/add-assignment.service';
 import { Assignment } from 'src/assignment';
-import { AssignmentService } from '../assignments/assignment.service';
+import { AssignmentService } from '../assignment.service';
 
 @Component({
   selector: 'app-assignment-detail',
@@ -10,13 +9,17 @@ import { AssignmentService } from '../assignments/assignment.service';
 })
 export class AssignmentDetailComponent implements OnInit {
 
-  assignments: Assignment;
+  assignments: Assignment[];
 
-  constructor(
-    assignmentService: AssignmentService,
-    addassignmentService: AddAssignmentService) { }
+  constructor(private assignmentService: AssignmentService) { }
 
   ngOnInit(): void {
+    this.assignmentService.getAssignments().subscribe(
+      data => {
+        console.log(data);
+        this.assignments = data;
+      }
+    );
   }
 
   
