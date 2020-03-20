@@ -24,3 +24,19 @@ h1 {
   * {
     font-family: Arial, Helvetica, sans-serif;
   }
+  button 
+  {
+    margin-top: 20px;
+    font-family: Arial;
+    background-color:#3c8add;
+    border: none;
+    padding: 15px 15px;
+    cursor: pointer; cursor: hand;
+    border-radius: 4px 4px 4px 4px;
+  }
+
+  button a
+  {
+    color: white;
+    text-decoration: none;
+  }

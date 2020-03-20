@@ -2,7 +2,7 @@
     margin: 0 0 2em 0;
     list-style-type: none;
     padding: 0;
-    width: 15em;
+    width: 65em;
   }
   .assignments li {
     cursor: pointer;
@@ -11,7 +11,7 @@
     background-color: rgb(187, 225, 231);
     margin: .5em;
     padding: .3em 0;
-    height: 1.6em;
+    height: 3.6em;
     border-radius: 4px;
   }
   .assignments li:hover {
@@ -26,6 +26,7 @@
     position: relative;
     display: block;
     width: 250px;
+    line-height: 1em;
   }
 
   .assignments a:hover {
@@ -34,16 +35,16 @@
   
   .assignments .badge {
     display: inline-block;
-    font-size: small;
+    font-size: medium;
     color: white;
     padding: 0.8em 0.7em 0 0.7em;
     background-color:#3c8add;
-    line-height: 1em;
+    line-height: 2.5em;
     position: relative;
     left: -1px;
-    top: -4px;
-    height: 1.8em;
-    min-width: 16px;
+    top: -5px;
+    height: 3.4em;
+    min-width: 26px;
     text-align: right;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
