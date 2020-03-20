@@ -9,7 +9,7 @@ import { AddAssignmentComponent } from './add-assignment/add-assignment.componen
 const routes: Routes = [
   { path: 'assignments', component: AssignmentsComponent},
   // { path: 'edit/id', component: EditAssignmentComponent},
-  { path: 'add-assignment/id', component: AddAssignmentComponent},
+  { path: 'add-assignment', component: AddAssignmentComponent},
   { path: 'assignment-detail/id', component: AssignmentDetailComponent}
 ];
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Assignment } from 'src/assignment';
+import { iAssignment } from 'src/assignment';
 import { AssignmentService } from '../assignment.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { AssignmentService } from '../assignment.service';
 })
 export class AssignmentDetailComponent implements OnInit {
 
-  assignments: Assignment[];
+  assignments: iAssignment[];
 
   constructor(private assignmentService: AssignmentService) { }
 

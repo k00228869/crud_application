@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AssignmentService } from '../assignment.service';
-import { Assignment } from 'src/assignment';
+import { iAssignment } from 'src/assignment';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { Assignment } from 'src/assignment';
 })
 export class AssignmentsComponent implements OnInit {
   
-  assignments: Assignment[];
+  assignments: iAssignment[];
   
   constructor(private assignmentService: AssignmentService) { }
 
@@ -27,8 +27,7 @@ export class AssignmentsComponent implements OnInit {
   
   public addNewAssignment(newAssignmentTitle: string, newAssignmentDescription: string) 
 {
-    let assignment: Assignment = {id: null, name: newAssignmentTitle, description: newAssignmentDescription}; //create an assignment object with id of 0
-
+    let assignment: iAssignment = {id: null, name: newAssignmentTitle, description: newAssignmentDescription}; //create an assignment object with id of 0
 	  this.assignmentService.addAssignment(assignment).subscribe(
       newAssignment => 
       { 
