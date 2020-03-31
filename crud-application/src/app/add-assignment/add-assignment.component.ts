@@ -10,7 +10,7 @@ import { AssignmentService } from '../assignment.service';
 })
 export class AddAssignmentComponent implements OnInit {
 
-  assignments: iAssignment[];
+  assignment: iAssignment;
   
   constructor(private assignmentService: AssignmentService) { }
 
@@ -18,7 +18,7 @@ export class AddAssignmentComponent implements OnInit {
     this.assignmentService.getAssignments().subscribe(
       data => {
         console.log(data);
-        this.assignments = data;
+        this.assignment = data;
       }
     );
   }
