@@ -30,6 +30,12 @@ export class AddAssignmentComponent implements OnInit {
 //       }
 //     );
 //   }
+    this.assignmentService.getAssignments().subscribe(
+      data => {
+        console.log(data);
+        this.assignment = data;
+      }
+    );
   }
   
 }
