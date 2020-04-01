@@ -18,7 +18,6 @@ newFormItem: FormGroup;
     ) {}
 
   ngOnInit() {
-
     this.newFormItem = this.formBuilder.group({
       name: new FormControl('Assignment Title', Validators.required),
       description: new FormControl('Assignment Description')
@@ -31,6 +30,6 @@ newFormItem: FormGroup;
       this.newFormItem.reset();//clear form
 
     }
-  }
-  
 }
+  
+

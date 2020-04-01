@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: '', component: AssignmentsComponent, pathMatch: 'full'}, //set to full so it doesnt catch any route
   // { path: 'edit/id', component: EditAssignmentComponent},
   { path: 'add-assignment', component: AddAssignmentComponent},
-  { path: 'assignment-detail/:id', component: AssignmentDetailComponent}
+  { path: 'assignment-detail/:id', component: AssignmentDetailComponent},
+  { path: 'save-assignment', component: AssignmentsComponent}
 ];
 
 @NgModule({

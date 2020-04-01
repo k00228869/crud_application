@@ -7,7 +7,7 @@ import{ iAssignment } from '../assignment';
   providedIn: 'root'
 })
 export class AssignmentService {
-
+private assignment:iAssignment[];
   // assignmentsUrl = 'api/assignments'; //url to api
   private webURI: string = 'api/assignments';
 
@@ -31,9 +31,9 @@ export class AssignmentService {
     return this.http.post<iAssignment>(this.webURI, assignment, this.httpOp); //posting to database
   }
 
-  public addAssignment(anAssignment: iAssignment): void //Observable<iAssignment>
+  public addAssignment(assignment: iAssignment): Observable<iAssignment>
   {
-    //return this.http.post<iAssignment>(this.webURI, assignment, this.httpOp); //posting to db
-    this.db.push(anAssignment);
+    return this.http.post<iAssignment>(this.webURI, assignment, this.httpOp); //posting to db
+    //this.assignment.push(assignment);
   }
 }
