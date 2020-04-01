@@ -31,8 +31,9 @@ export class AssignmentService {
     return this.http.post<iAssignment>(this.webURI, assignment, this.httpOp); //posting to database
   }
 
-  public addAssignment(assignment: iAssignment): Observable<iAssignment>
+  public addAssignment(anAssignment: iAssignment): void //Observable<iAssignment>
   {
-    return this.http.post<iAssignment>(this.webURI, assignment, this.httpOp); //posting to db
+    //return this.http.post<iAssignment>(this.webURI, assignment, this.httpOp); //posting to db
+    this.db.push(anAssignment);
   }
 }

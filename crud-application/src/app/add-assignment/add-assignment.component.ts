@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { iAssignment } from 'src/assignment';
 import { AssignmentService } from '../assignment.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -10,36 +10,27 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./add-assignment.component.css']
 })
 export class AddAssignmentComponent implements OnInit {
- Private newFormItem: FormGroup;
-  assignment: iAssignment;
+newFormItem: FormGroup;
+//assignment: iAssignment;
   
-  constructor(private assignmentService: AssignmentService,
-    private formBuilder:FormBuilder
+  constructor(private formBuilder:FormBuilder, private assignmentService: AssignmentService
     //form builder builds form group
-    ) { }
+    ) {}
 
-  ngOnInit(): void {
-//     public addNewAssignment(newAssignmentTitle: string, newAssignmentDescription: string) 
-// {
-//     let assignment: iAssignment = {id: null, name: newAssignmentTitle, description: newAssignmentDescription}; //create an assignment object with id of 0
-// 	  this.assignmentService.addAssignment(assignment).subscribe(
-//       newAssignment => 
-//       { 
-//         console.log(JSON.stringify(newAssignment));
-//         this.assignments.push(newAssignment); 
-//       }
-//     );
-//   }
+  ngOnInit() {
+
     this.newFormItem = this.formBuilder.group({
       name: new FormControl('Assignment Title', Validators.required),
       description: new FormControl('Assignment Description')
     });
-    this.assignmentService.getAssignments().subscribe(
-      data => {
-        console.log(data);
-        this.assignment = data;
-      }
-    );
+  }
+    
+    public onSubmit(assignment: iAssignment): void
+    {
+      this.assignmentService.addAssignment(assignment);//call function to add assignment
+      this.newFormItem.reset();//clear form
+
+    }
   }
   
 }
