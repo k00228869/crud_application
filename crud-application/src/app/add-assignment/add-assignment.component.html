@@ -1,6 +1,6 @@
-<div *ngIf="assignments">
+<div *ngIf="assignment">
 
-    <h2> {{assignments.name | uppercase}}</h2>
+    <h2> {{assignment.name | uppercase}}</h2>
   
     <div>
       <label> Name:
@@ -12,6 +12,6 @@
         <input type ="text" #newAssignment placeholder="Assignment description"/>
       </label>
     </div>
-    <button (click)="addAssignment(newAssignment.value); newAssignment.value=''">Save Assignment</button> 
+    <!-- <button (click)="addAssignment(newAssignment.value); newAssignment.value=''">Save Assignment</button>  -->
   
   </div>

@@ -24,17 +24,5 @@ export class AssignmentsComponent implements OnInit {
       }
     );
   }
-  
-  public addNewAssignment(newAssignmentTitle: string, newAssignmentDescription: string) 
-{
-    let assignment: iAssignment = {id: null, name: newAssignmentTitle, description: newAssignmentDescription}; //create an assignment object with id of 0
-	  this.assignmentService.addAssignment(assignment).subscribe(
-      newAssignment => 
-      { 
-        console.log(JSON.stringify(newAssignment));
-        this.assignments.push(newAssignment); 
-      }
-    );
-  }
 
 }
