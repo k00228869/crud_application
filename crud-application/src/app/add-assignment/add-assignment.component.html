@@ -1,17 +1,18 @@
-<div *ngIf="assignment">
-
-    <h2> {{assignment.name | uppercase}}</h2>
-  
-    <div>
-      <label> Name:
-        <input type ="text" #newAssignment placeholder="Assignment name"/>
-      </label>
-    </div>
-    <div>
-      <label> Description:
-        <input type ="text" #newAssignment placeholder="Assignment description"/>
-      </label>
-    </div>
-    <!-- <button (click)="addAssignment(newAssignment.value); newAssignment.value=''">Save Assignment</button>  -->
-  
+<form [formGroup]="newFormItem" (ngSubit)="onSubmit(newFormItem.value)">
+  <div>
+    <label> Name:
+      <input type ="text" formControlName="name" placeholder="Assignment name">
+    </label>
   </div>
+
+  <div>
+    <label> Description:
+      <input type ="text" formControlName="description" placeholder="Assignment description"/>
+    </label>
+  </div>
+  
+  <button type="submit">Save</button>
+
+</form>
+  
+    
