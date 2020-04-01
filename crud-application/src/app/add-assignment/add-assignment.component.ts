@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { iAssignment } from 'src/assignment';
 import { AssignmentService } from '../assignment.service';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -30,6 +30,10 @@ export class AddAssignmentComponent implements OnInit {
 //       }
 //     );
 //   }
+    this.newFormItem = this.formBuilder.group({
+      name: new FormControl('Assignment Title', Validators.required),
+      description: new FormControl('Assignment Description')
+    });
     this.assignmentService.getAssignments().subscribe(
       data => {
         console.log(data);
