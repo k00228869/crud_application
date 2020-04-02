@@ -1,5 +1,6 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-
+import { Injectable } from '@angular/core';
+import{ iAssignment } from '../assignment';
 
 export class InMemoryDataService implements InMemoryDbService 
 {

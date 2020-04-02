@@ -1,6 +1,6 @@
 <ul class="assignments">
     <li *ngFor="let assignment of assignments">
-        <a routerLink="/assignmentDetail/{{assignment.id}}">
+        <a routerLink="/assignment/{{ assignment.id }}">
             <span class="badge">{{assignment.id}}</span>
             {{assignment.name}}
         </a>

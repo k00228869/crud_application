@@ -8,7 +8,8 @@ import { AddAssignmentComponent } from './add-assignment/add-assignment.componen
 
 const routes: Routes = [
   { path: '', component: AssignmentsComponent, pathMatch: 'full'}, //set to full so it doesnt catch any route
-  // { path: 'edit/id', component: EditAssignmentComponent},
+  // { path: 'edit/:id', component: EditAssignmentComponent},
+  { path: 'assignment/:assignmentID', component: AssignmentDetailComponent},
   { path: 'add-assignment', component: AddAssignmentComponent},
   { path: 'assignment-detail/:id', component: AssignmentDetailComponent},
   { path: 'save-assignment', component: AssignmentsComponent}

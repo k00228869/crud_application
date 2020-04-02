@@ -8,7 +8,7 @@ import{ iAssignment } from '../assignment';
 })
 export class AssignmentService {
 assignment:iAssignment[];
-  // assignmentsUrl = 'api/assignments'; //url to api
+  //assignmentsUrl = 'api/assignments'; //url to api
   private webURI: string = 'api/assignments';
 
   private httpOp = {
