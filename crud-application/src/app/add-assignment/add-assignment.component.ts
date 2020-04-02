@@ -11,7 +11,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class AddAssignmentComponent implements OnInit {
 newFormItem: FormGroup;
-//assignment: iAssignment;
+assignment: iAssignment[];
   
   constructor(private formBuilder:FormBuilder, private assignmentService: AssignmentService
     //form builder builds form group
@@ -28,8 +28,7 @@ newFormItem: FormGroup;
     {
       this.assignmentService.addAssignment(assignment);//call function to add assignment
       this.newFormItem.reset();//clear form
-
-    }
+    } 
 }
   
 

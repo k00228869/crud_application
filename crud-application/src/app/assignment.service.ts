@@ -7,7 +7,7 @@ import{ iAssignment } from '../assignment';
   providedIn: 'root'
 })
 export class AssignmentService {
-private assignment:iAssignment[];
+assignment:iAssignment[];
   // assignmentsUrl = 'api/assignments'; //url to api
   private webURI: string = 'api/assignments';
 
