@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AssignmentService } from './assignment.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
     ReactiveFormsModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }),
-    AppRoutingModule
+    //AppRoutingModule, InMemoryWebApiModule.forRoot(assignments)
   ],
   providers: [AssignmentService],
   bootstrap: [AppComponent]

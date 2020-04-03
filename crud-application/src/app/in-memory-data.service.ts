@@ -1,12 +1,13 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Injectable } from '@angular/core';
-import{ iAssignment } from '../assignment';
+import { iAssignment } from '../assignment';
+
 
 export class InMemoryDataService implements InMemoryDbService 
 {
   createDb()
   {
-    const assignments = [
+    const assignments: iAssignment[] = [
       {
         id:1, name: 'History Essay', description: 'description of the first assignment'
       },
