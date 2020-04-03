@@ -26,12 +26,13 @@ assignment:iAssignment[];
   public getAssignment(assignment:iAssignment): Observable<iAssignment>
   {
     let url:string = this.assignmentsUrl + "/" + assignment.id;
-    return this.http.post<iAssignment>(this.assignmentsUrl, assignment, this.httpOp); //posting to database
+    return this.http.get<iAssignment>(this.assignmentsUrl, this.httpOp); //posting to database
   }
 
   public addAssignment(assignment: iAssignment): Observable<iAssignment>
   {
     return this.http.post<iAssignment>(this.assignmentsUrl, assignment, this.httpOp); //posting to db
     //this.assignment.push(assignment);
+
   }
 }

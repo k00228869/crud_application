@@ -26,7 +26,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
     ReactiveFormsModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }),
-    //AppRoutingModule, InMemoryWebApiModule.forRoot(assignments)
+    AppRoutingModule,// InMemoryWebApiModule.forRoot(assignments)
   ],
   providers: [AssignmentService],
   bootstrap: [AppComponent]

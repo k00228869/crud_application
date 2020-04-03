@@ -32,7 +32,7 @@ assignments: iAssignment;
       // let assignment: iAssignment = {
       //   id: null, name: '', description: ''
       // }
-      this.assignmentService.addAssignment(assignment);//call function to add assignment
+      this.assignmentService.addAssignment(assignments);//call function to add assignment
       this.newFormItem.reset();//clear form
     } 
 }
