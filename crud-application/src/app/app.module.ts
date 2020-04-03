@@ -11,13 +11,15 @@ import { AssignmentService } from './assignment.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { EditAssignmentComponent } from './edit-assignment/edit-assignment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AssignmentsComponent,
     AssignmentDetailComponent,
-    AddAssignmentComponent
+    AddAssignmentComponent,
+    EditAssignmentComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,9 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
     ReactiveFormsModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }),
-    AppRoutingModule,// InMemoryWebApiModule.forRoot(assignments)
+    AppRoutingModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
+
   ],
   providers: [AssignmentService],
   bootstrap: [AppComponent]

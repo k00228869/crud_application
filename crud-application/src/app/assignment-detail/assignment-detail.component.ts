@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AssignmentDetailComponent implements OnInit {
 
-  assignments:iAssignment;
+  assignment:iAssignment;
 
   constructor(
     private route: ActivatedRoute,

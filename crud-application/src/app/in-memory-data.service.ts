@@ -5,9 +5,9 @@ import { iAssignment } from '../assignment';
 
 export class InMemoryDataService implements InMemoryDbService 
 {
-  createDb()
+  createDb()//overides method to return any data
   {
-    const assignments: iAssignment[] = [
+    let assignments = [
       {
         id:1, name: 'History Essay', description: 'description of the first assignment'
       },
@@ -20,4 +20,10 @@ export class InMemoryDataService implements InMemoryDbService
     ];
     return {assignments};
   }
+
+  generateId(assignments: iAssignment[]): number //ensures an assignment always has an id
+  {
+    return assignments.length > 0 ? Math.max(...assignments.map(assignment =>
+      assignment.id)) + 1: 13;
+  }//if array is empty, return 13 if array is not empty return the highest id and add 1
 }
