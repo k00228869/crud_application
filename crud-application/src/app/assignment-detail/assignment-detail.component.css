@@ -12,3 +12,13 @@ button {
   button:hover {
     background-color: #cfd8dc;
   }
+  .title p
+  {
+    color:white;
+    padding: 50px,50px, 50px,50px;
+  }
+  .title
+  {
+    height:150px;
+    background-color:#3c8add;
+  }

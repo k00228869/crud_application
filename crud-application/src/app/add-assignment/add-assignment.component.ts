@@ -21,7 +21,6 @@ export class AddAssignmentComponent implements OnInit {
 
   ngOnInit() {
     this.newFormItem = this.formBuilder.group({
-      id: new FormControl(''),
       name: new FormControl('',Validators.required),
       description: new FormControl('')
     })

@@ -18,7 +18,6 @@ export class AssignmentsComponent implements OnInit {
     this.assignmentService.getAssignments().subscribe( //returns observable
       (data) => 
       {
-        console.log(data);
         this.assignment = data; //assignments variable is equal to the data returned
       }
     );
