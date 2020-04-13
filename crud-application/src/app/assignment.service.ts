@@ -8,9 +8,6 @@ import{ iAssignment } from '../assignment';
 })
 export class AssignmentService {
 
-
-  //assignments:iAssignment[];
-
   private assignmentsUrl: string = 'api/assignments'; //url to api
 
   httpOptions = {
@@ -30,8 +27,7 @@ export class AssignmentService {
 
   public getAssignment(id:number):Observable<iAssignment> //constructs request url with an assignment id and returns single assignment
   {
-    return this.http.get<iAssignment>(this.assignmentsUrl + "/" + id, this.httpOptions); //posting to database
-    
+    return this.http.get<iAssignment>(this.assignmentsUrl + "/" + id, this.httpOptions); //posting to database, httpOp func means format is json
   }
 
   public addAssignment(assignment: iAssignment):Observable<iAssignment>
@@ -39,8 +35,8 @@ export class AssignmentService {
     return this.http.post<iAssignment>(this.assignmentsUrl, assignment, this.httpOptions); //posting to db
   }
 
-  public deleteAssignment(assignment:iAssignment):Observable<iAssignment>
-  {
-    return this.http.delete<iAssignment>(this.assignmentsUrl + "/" + assignment.id, this.httpOptions);
-  }
+  // public deleteAssignment(assignment:iAssignment):Observable<iAssignment>
+  // {
+  //   return this.http.delete<iAssignment>(this.assignmentsUrl + "/" + assignment.id, this.httpOptions);
+  // }
 }

@@ -10,23 +10,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AssignmentDetailComponent implements OnInit {
 
-  assignments:iAssignment[];
+  private assignment:iAssignment
 
   constructor(
     private route: ActivatedRoute,
     private assignmentService: AssignmentService) { }
 
-  ngOnInit(): void {
-    this.assignmentService.getAssignments().subscribe(
-      data => {
-        console.log(data);
-        this.assignments = data;
-      }
-    );
+  ngOnInit() {
+    
     this.route.paramMap.subscribe( //notify change in id
-      (params) => {//pass in id parameter on url
-          this.assignmentService.getAssignment(+params.get("id"));//get value and convert to number
-        }
+      (params) => //pass id parameter on url
+      {
+          this.assignmentService.getAssignment(+params.get("id")).subscribe(
+            (data) =>
+            {
+              this.assignment = data;
+            }
+          );//get value and convert to number
+      }
     );
   }
 

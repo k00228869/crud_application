@@ -10,17 +10,16 @@ import { iAssignment } from 'src/assignment';
 })
 export class AssignmentsComponent implements OnInit {
   
-  assignments: iAssignment[];
+  public assignments: iAssignment[]; //can store an array of assignments
   
   constructor(private assignmentService: AssignmentService) { }
 
-  ngOnInit(): void {
-    console.log('HttpDemoComponent:: ngOnInit()');
-
-    this.assignmentService.getAssignments().subscribe(
-      data => {
+  ngOnInit() {
+    this.assignmentService.getAssignments().subscribe( //returns observable
+      (data) => 
+      {
         console.log(data);
-        this.assignments = data;
+        this.assignments = data; //assignments variable is equal to the data returned
       }
     );
   }

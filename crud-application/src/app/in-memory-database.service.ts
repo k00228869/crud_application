@@ -1,13 +1,15 @@
-import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Injectable } from '@angular/core';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { iAssignment } from '../assignment';
 
-
-export class InMemoryDataService implements InMemoryDbService 
+@Injectable({
+  providedIn: 'root'
+})
+export class InMemoryDatabaseService implements InMemoryDbService 
 {
   createDb()//overides method to return any data
   {
-    let assignments = [
+    const assignments:iAssignment[] = [
       {
         id:1, name: 'History Essay', description: 'description of the first assignment'
       },
@@ -20,10 +22,4 @@ export class InMemoryDataService implements InMemoryDbService
     ];
     return {assignments};
   }
-
-  generateId(assignments: iAssignment[]): number //ensures an assignment always has an id
-  {
-    return assignments.length > 0 ? Math.max(...assignments.map(assignment =>
-      assignment.id)) + 1: 13;
-  }//if array is empty, return 13 if array is not empty return the highest id and add 1
 }

@@ -9,7 +9,7 @@ import { AddAssignmentComponent } from './add-assignment/add-assignment.componen
 import { AppRoutingModule } from './app-routing.module';
 import { AssignmentService } from './assignment.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryDatabaseService }  from './in-memory-database.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { EditAssignmentComponent } from './edit-assignment/edit-assignment.component';
 
@@ -24,12 +24,12 @@ import { EditAssignmentComponent } from './edit-assignment/edit-assignment.compo
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule,  
     ReactiveFormsModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }),
-    AppRoutingModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+      InMemoryDatabaseService, { dataEncapsulation: false }),
+    AppRoutingModule
+    //InMemoryWebApiModule.forRoot(InMemoryDataService)
 
   ],
   providers: [AssignmentService],
