@@ -7,34 +7,40 @@ import{ iAssignment } from '../assignment';
   providedIn: 'root'
 })
 export class AssignmentService {
-assignment:iAssignment[];
 
- private assignmentsUrl = 'api/assignments'; //url to api
 
-  httpOp = {
+  //assignments:iAssignment[];
+
+  private assignmentsUrl: string = 'api/assignments'; //url to api
+
+  httpOptions = {
     //specifying content format is json
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+  };
+
+  constructor(private http: HttpClient) 
+  { 
+    console.log("service constructing");
   }
 
-  constructor(private http: HttpClient) { 
-    console.log('HTTPDemoService ::constructor()');
-  }
-
-  public getAssignments(): Observable<iAssignment[]>
+  public getAssignments():Observable<iAssignment[]>
   {
-    return this.http.get<iAssignment[]>(this.assignmentsUrl, this.httpOp); //get array of assignments from the server
+    return this.http.get<iAssignment[]>(this.assignmentsUrl, this.httpOptions); //get array of assignments from the server
   }
 
-  public getAssignment(id:number): Observable<iAssignment> //constructs request url with an assignment id and returns single assignment
+  public getAssignment(id:number):Observable<iAssignment> //constructs request url with an assignment id and returns single assignment
   {
-    const url = '${this.assignmentsUrl}/${id}';
-    //let url:string = this.assignmentsUrl + "/" + assignment.id;
-    return this.http.get<iAssignment>(url, this.httpOp); //posting to database
+    return this.http.get<iAssignment>(this.assignmentsUrl + "/" + id, this.httpOptions); //posting to database
+    
   }
 
-  public addAssignment(assignment: iAssignment): Observable<iAssignment>
+  public addAssignment(assignment: iAssignment):Observable<iAssignment>
   {
-    return this.http.post<iAssignment>(this.assignmentsUrl, assignment, this.httpOp); //posting to db
-    //this.assignment.push(assignment);
+    return this.http.post<iAssignment>(this.assignmentsUrl, assignment, this.httpOptions); //posting to db
+  }
+
+  public deleteAssignment(assignment:iAssignment):Observable<iAssignment>
+  {
+    return this.http.delete<iAssignment>(this.assignmentsUrl + "/" + assignment.id, this.httpOptions);
   }
 }
