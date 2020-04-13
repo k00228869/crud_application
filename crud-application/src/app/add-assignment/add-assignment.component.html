@@ -1,17 +1,15 @@
-<form [formGroup]="newFormItem" (ngSubit)="onSubmit(newFormItem.value)">
+<form [formGroup]="newFormItem" (ngSubmit)="onSubmit(newFormItem.value)">
   <div>
-    <label> Name:
-      <input type ="text" formControlName="name" placeholder="Assignment name">
-    </label>
+    <label>Name:</label>
+    <input type ="text" formControlName="name" placeholder="Assignment Title">
   </div>
 
   <div>
-    <label> Description:
-      <input type ="text" formControlName="description" placeholder="Assignment description"/>
-    </label>
+    <label>Description:</label>
+    <input type ="text" formControlName="description" placeholder="Assignment description"/>
   </div>
   
-  <button type="submit"><a routerLink="/save-assignment">save</a></button>
+  <button type="submit">Save</button>
 </form>
-  
-    
+<!-- <a routerLink="/save-assignment">Save</a> -->
+<app-assignments></app-assignments>

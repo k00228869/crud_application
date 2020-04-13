@@ -1,8 +1,9 @@
+<button><a routerLink="/add-assignment">+ Assignment</a></button>
 <ul class="assignments">
-    <li *ngFor="let assignment of assignments">
-        <a routerLink="/assignment/{{ assignments.id }}">
-            <span class="badge">{{assignments.id}}</span>
-            {{assignments.name}}
+    <li *ngFor="let assignment of assignment">
+        <a routerLink="/assignment/{{ assignment.id }}">
+            <span class="badge">{{assignment.id}}</span>
+            {{assignment.name}}
         </a>
     </li>
 </ul>
