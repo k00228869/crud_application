@@ -1,14 +1,29 @@
 <form [formGroup]="newFormItem" (ngSubmit)="onSubmit(newFormItem.value)">
   <div>
-    <label>Name:</label>
-    <input type ="text" formControlName="name" placeholder="Assignment Title">
+    <label>Title</label>
+    <input type ="text" formControlName="name" placeholder="Assignment Title"/>
   </div>
 
   <div>
-    <label>Description:</label>
+    <label>Description</label>
     <input type ="text" formControlName="description" placeholder="Assignment description"/>
   </div>
-  
+
+  <div>
+    <label>Due Date</label>
+    <input type="date" formControlName="dueDate" placeholder="yyyy-mm-dd"/>
+  </div>
+
+  <div>
+    <label>Given Date</label>
+    <input type="date" formControlName="givenDate" placeholder="yyyy-mm-dd"/>
+  </div>
+
+  <div>
+    <label>Progress:</label>
+    <input class="slider" type="range" formControlName="progress" min="1" max="100" value="50">
+  </div>
+
   <button type="submit">Save</button>
 </form>
 <!-- <a routerLink="/save-assignment">Save</a> -->

@@ -12,6 +12,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDatabaseService }  from './in-memory-database.service';
 import { EditAssignmentComponent } from './edit-assignment/edit-assignment.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDatabaseService, { dataEncapsulation: false }
-      )
+      ),
+    BrowserAnimationsModule
   ],
   providers: [AssignmentService],
   bootstrap: [AppComponent]

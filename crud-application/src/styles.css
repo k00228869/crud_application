@@ -1,5 +1,5 @@
 @import '~bootstrap/dist/css/bootstrap.css';
-@import "~bootstrap/scss/bootstrap";
+
   h1
   {
     color: rgb(51, 101, 151);
@@ -53,3 +53,6 @@
     color: white;
     text-decoration: none;
   }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

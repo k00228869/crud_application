@@ -11,8 +11,16 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class AddAssignmentComponent implements OnInit {
   newFormItem: FormGroup;
-  // assignment: iAssignment[];
-  
+
+  // formatLabel(value: number) 
+  // {
+  //   if (value >= 1000) 
+  //   {
+  //     return Math.round(value / 1000) + '%';
+  //   }
+  //   return value;
+  // }
+
   constructor(
     private formBuilder:FormBuilder,
     private assignmentService: AssignmentService
@@ -22,7 +30,10 @@ export class AddAssignmentComponent implements OnInit {
   ngOnInit() {
     this.newFormItem = this.formBuilder.group({
       name: new FormControl('',Validators.required),
-      description: new FormControl('')
+      description: new FormControl(''),
+      dueDate: new FormControl(''),
+      givenDate: new FormControl(''),
+      progress: new FormControl('')
     })
   }
     
