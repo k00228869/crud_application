@@ -1,1 +1,35 @@
-<p>edit-assignment works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+  
+        <form [formGroup]="updateFormItem" (ngSubmit)="onSubmit(updateFormItem.value)">
+        <div>
+          <label>Title</label>
+          <input type ="text" formControlName="name" placeholder="Assignment Title"/>
+        </div>
+  
+        <div>
+          <label>Description</label>
+          <input type ="text"  formControlName="description" placeholder="Assignment description"/>
+        </div>
+  
+        <div>
+          <label>Due Date</label>
+          <input type="date" formControlName="dueDate" placeholder="yyyy-mm-dd"/>
+        </div>
+  
+        <div>
+          <label>Given Date</label>
+          <input type="date" disabled="true" formControlName="givenDate" placeholder="yyyy-mm-dd"/>
+        </div>
+  
+        <div>
+          <label>Progress:</label>
+          <input class="slider" type="range" formControlName="progress" min="1" max="100" value="50">
+        </div>
+  
+        <button type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>

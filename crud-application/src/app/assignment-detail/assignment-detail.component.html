@@ -1,9 +1,13 @@
-<div *ngIf="assignment"> 
-    <!-- only display if assignment i equal to something -->
- <div class="title">
-     <p>{{assignment.name}}</p>
- </div>
- 
- <div class="descrip">
-    <p>{{assignment.description}}</p>
- </div>
+<div class="container" *ngIf="assignment"> <!--only display if equal to something -->
+    <div class="row" class="title">
+        <div class="col-sm-12">
+            <p>{{assignment.name}}</p>
+        </div>
+    </div>
+
+    <div class="row" class="descrip">
+        <div class="col-sm-12">
+            <p>{{assignment.description}}</p>
+        </div>
+    </div>
+</div>
