@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { iAssignment } from 'src/assignment';
 import { AssignmentService } from '../assignment.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,13 +11,15 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
   styleUrls: ['./add-assignment.component.css']
 })
 export class AddAssignmentComponent implements OnInit {
+  assignment: iAssignment;
   newFormItem: FormGroup;
-  assignment:iAssignment;
+
   constructor(
     private formBuilder:FormBuilder,
+    private router:Router,
     private assignmentService: AssignmentService
     //form builder builds form group
-    ) {}
+    ) { }
 
   ngOnInit() {
     this.newFormItem = this.formBuilder.group
@@ -25,16 +28,17 @@ export class AddAssignmentComponent implements OnInit {
       description: new FormControl(''),
       dueDate: new FormControl(''),
       givenDate: new FormControl(''),
-      progress: new FormControl('')
-    })
+      progress: new FormControl(1,Validators.min(1))
+    });
   }
     
-  public onSubmit(assignment: iAssignment): void
+  public onSubmit(assignment:iAssignment):void
   {
     if(this.newFormItem.status === 'VALID')
     {
-      this.assignmentService.addAssignment(assignment); //call function to add assignment
-      this.newFormItem.reset();//clear form
+      this.assignmentService.addAssignment(this.assignment);  //call function to add assignment
+      // this.router.navigate(['/save-assignment']);
+      //this.newFormItem.reset();//clear form
     }
     else
     {

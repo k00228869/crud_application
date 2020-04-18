@@ -7,7 +7,7 @@ import{ iAssignment } from '../assignment';
   providedIn: 'root'
 })
 export class AssignmentService {
-
+  // private nextId:number = 4;
   private assignmentsUrl: string = 'api/assignments'; //url to api
 
   httpOptions = {
@@ -30,10 +30,12 @@ export class AssignmentService {
     return this.http.get<iAssignment>(this.assignmentsUrl + "/" + id, this.httpOptions); //posting to database, httpOp func means format is json
   }
 
-  public addAssignment(assignment: iAssignment):Observable<iAssignment>
+  public addAssignment(assignment:iAssignment):Observable<iAssignment>
   {
-    console.log("assignment added");
+    // assignment.id = this.nextId;
+    // this.nextId++;
     return this.http.post<iAssignment>(this.assignmentsUrl, assignment, this.httpOptions); //posting to db
+    console.log("assignment added");
   }
 
   // public deleteAssignment(assignment:iAssignment):Observable<iAssignment>

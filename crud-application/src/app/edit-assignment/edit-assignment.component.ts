@@ -23,7 +23,7 @@ export class EditAssignmentComponent implements OnInit {
   ) { }
   
   ngOnInit() {
-
+    
     this.route.paramMap.subscribe(
       (params) => {
           this.assignmentService.getAssignment(+params.get("id")).subscribe(
@@ -43,8 +43,8 @@ export class EditAssignmentComponent implements OnInit {
       name: new FormControl('',Validators.required),
       description: new FormControl(''),
       dueDate: new FormControl(''),
-      givenDate: new FormControl(''),
-      progress: new FormControl('')
+      givenDate: new FormControl({value:'', disabled: true}),
+      progress: new FormControl(1,Validators.min(1))
     });
   }
 
@@ -54,18 +54,20 @@ export class EditAssignmentComponent implements OnInit {
     {
       console.log("updating assignment");
       this.updateAssignment.name = updatedAssignment.name;
-      this.updateAssignment.name = updatedAssignment.description;
-      this.updateAssignment.name = updatedAssignment.dueDate;
-      this.updateAssignment.name = updatedAssignment.givenDate;
-      this.updateAssignment.name = updatedAssignment.progress;
+      this.updateAssignment.description = updatedAssignment.description;
+      this.updateAssignment.dueDate = updatedAssignment.dueDate;
+      this.updateAssignment.givenDate = updatedAssignment.givenDate;
+      this.updateAssignment.progress = updatedAssignment.progress;
 
       this.assignmentService.updateAssignment(this.updateAssignment).subscribe(
         (data)=>{
+
           this.router.navigate(['/save-assignment']);
         }
-      )
-
-      
+      );
+    }
+    else{
+      console.log("add Title");
     }
   }
 

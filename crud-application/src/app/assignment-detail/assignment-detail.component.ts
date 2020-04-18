@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AssignmentDetailComponent implements OnInit {
 
-  assignment:iAssignment
+  assignment:iAssignment;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +26,7 @@ export class AssignmentDetailComponent implements OnInit {
             {
               this.assignment = data;
             }
-          );//get value and convert to number
+          );
       }
     );
   }
