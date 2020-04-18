@@ -11,7 +11,7 @@
     background-color: rgb(187, 225, 231);
     margin: .5em;
     padding: .3em 0;
-    height: 3.6em;
+    height: 4em;
     border-radius: 4px;
   }
   .assignments li:hover {
@@ -42,10 +42,23 @@
     line-height: 2.5em;
     position: relative;
     left: -1px;
-    top: -5px;
-    height: 3.4em;
+    top: -4px;
+    height: 3.5em;
     min-width: 26px;
     text-align: right;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+  }
+  button{
+    border-radius:10px;
+    margin-left:5px;
+    margin-bottom:30px;
+    margin-top:30px;
+  }
+
+  button:hover
+  {
+    color: black;
+    background-color: rgb(247, 239, 239);
+    left: .1em;
   }

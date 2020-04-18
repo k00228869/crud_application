@@ -32,6 +32,7 @@ export class AssignmentService {
 
   public addAssignment(assignment: iAssignment):Observable<iAssignment>
   {
+    console.log("assignment added");
     return this.http.post<iAssignment>(this.assignmentsUrl, assignment, this.httpOptions); //posting to db
   }
 
