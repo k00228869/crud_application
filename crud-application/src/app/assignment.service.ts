@@ -42,9 +42,9 @@ export class AssignmentService {
   //   return this.http.delete<iAssignment>(this.assignmentsUrl + "/" + assignment.id, this.httpOptions);
   // }
 
-  //public updateAssignment(updatedAssignment:iAssignment):Observable<iAssignment>
-  //{
-  //  console.log("assignment updated");
-  //  return this.http.put<iAssignment>(this.assignmentsUrl, updatedAssignment, this.httpOptions); 
-  //}
+  public updateAssignment(updatedAssignment:iAssignment):Observable<iAssignment>
+  {
+   console.log("assignment updated");
+   return this.http.put<iAssignment>(this.assignmentsUrl, updatedAssignment, this.httpOptions); 
+  }
 }
