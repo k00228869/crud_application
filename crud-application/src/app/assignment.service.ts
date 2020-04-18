@@ -38,11 +38,11 @@ export class AssignmentService {
     console.log("assignment added");
   }
 
-  // public deleteAssignment(assignment:iAssignment):Observable<iAssignment>
-  // {
-  //  console.log("assignment deleted");
-  //   return this.http.delete<iAssignment>(this.assignmentsUrl + "/" + assignment.id, this.httpOptions);
-  // }
+  public deleteAssignment(assignment:iAssignment):Observable<iAssignment>
+  {
+   console.log("assignment deleted");
+    return this.http.delete<iAssignment>(this.assignmentsUrl + "/" + assignment.id, this.httpOptions);
+  }
 
   public updateAssignment(updatedAssignment:iAssignment):Observable<iAssignment>
   {

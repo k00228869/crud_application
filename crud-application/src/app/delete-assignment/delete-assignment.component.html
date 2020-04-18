@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="popup">
+            <h3>Please enter your password to delete an assignment</h3>
+                <form  [formGroup]="deleteForm" (ngSubmit)="confirmDelete(deleteFrom.value)" class="form-group">
+                    <input type="text" placeholder="Password" formControlName="confirmDelete">
+                    <label class="form-label">Password</label>
+                </form>
+            <div>
+                <button type="button">Cancel</button>
+                <button type="button">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

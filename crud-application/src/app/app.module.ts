@@ -13,6 +13,7 @@ import { InMemoryDatabaseService }  from './in-memory-database.service';
 import { EditAssignmentComponent } from './edit-assignment/edit-assignment.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DeleteAssignmentComponent } from './delete-assignment/delete-assignment.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AssignmentsComponent,
     AssignmentDetailComponent,
     AddAssignmentComponent,
-    EditAssignmentComponent
+    EditAssignmentComponent,
+    DeleteAssignmentComponent
   ],
   imports: [
     BrowserModule,
