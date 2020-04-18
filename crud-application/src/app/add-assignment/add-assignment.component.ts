@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { iAssignment } from 'src/assignment';
 import { AssignmentService } from '../assignment.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +15,6 @@ export class AddAssignmentComponent implements OnInit {
 
   constructor(
     private formBuilder:FormBuilder,
-    private router:Router,
     private assignmentService: AssignmentService
     //form builder builds form group
     ) { }
