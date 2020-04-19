@@ -4,6 +4,7 @@ import { iAssignment } from 'src/assignment';
 import { AssignmentService } from '../assignment.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-delete-assignment',
   templateUrl: './delete-assignment.component.html',
@@ -25,7 +26,12 @@ export class DeleteAssignmentComponent implements OnInit {
 
     this.route.paramMap.subscribe(
       (params)=> {
-        this.deleteAssignment = this.assignmentService.getAssignment(+params.get("id"));
+        // JH = getAssignmemt returns an Observable so we must subscribe to it
+        this.assignmentService.getAssignment(+params.get("id")).subscribe(
+          (data) => {
+            this.deleteAssignment = data;
+          }
+        );
       }
     );
 
