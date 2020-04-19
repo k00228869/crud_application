@@ -25,7 +25,12 @@ export class DeleteAssignmentComponent implements OnInit {
 
     this.route.paramMap.subscribe(
       (params)=> {
-        this.deleteAssignment = this.assignmentService.getAssignment(+params.get("id"));
+        this.assignmentService.getAssignment(+params.get("id")).subscribe(
+          (data)=> 
+          {
+            this.deleteAssignment = data;
+          }
+        );
       }
     );
 
@@ -35,10 +40,16 @@ export class DeleteAssignmentComponent implements OnInit {
 
   }
   public confirmDeletion(formValues:any):void{
+    console.log(JSON.stringify(formValues))
     if(formValues.confirmDelete =="WDF2020")
     {
-      this.assignmentService.deleteAssignment(this.deleteAssignment);
-      this.router.navigate(['/save-assignments']);
+      this.assignmentService.deleteAssignment(this.deleteAssignment).subscribe(
+        (date)=>
+        {
+          this.router.navigate(['/save-assignments']);
+        }
+      );
+      
     }
   }
 }

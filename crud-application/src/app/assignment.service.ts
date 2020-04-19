@@ -40,7 +40,7 @@ export class AssignmentService {
 
   public deleteAssignment(assignment:iAssignment):Observable<iAssignment>
   {
-   console.log("assignment deleted");
+    console.log("assignment deleted");
     return this.http.delete<iAssignment>(this.assignmentsUrl + "/" + assignment.id, this.httpOptions);
   }
 
