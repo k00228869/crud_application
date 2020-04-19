@@ -44,9 +44,9 @@ export class DeleteAssignmentComponent implements OnInit {
     if(formValues.confirmDelete =="WDF2020")
     {
       this.assignmentService.deleteAssignment(this.deleteAssignment).subscribe(
-        (date)=>
+        (data)=>
         {
-          this.router.navigate(['/save-assignments']);
+          this.router.navigate(['/save-assignment']);
         }
       );
       

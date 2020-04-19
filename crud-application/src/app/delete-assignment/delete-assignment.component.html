@@ -6,11 +6,11 @@
                 <form  [formGroup]="deleteForm" (ngSubmit)="confirmDeletion(deleteForm.value)" class="form-group">
                     <input type="text" placeholder="Password" formControlName="confirmDelete">
                     <label class="form-label">Password</label>
+
+
+                    <button type="button">Cancel</button>
+                <button type="submit">Delete</button>
                 </form>
-            <div>
-                <button type="button">Cancel</button>
-                <button type="button">Delete</button>
-            </div>
         </div>
     </div>
 </div> 
