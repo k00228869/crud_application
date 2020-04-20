@@ -26,9 +26,9 @@ export class AddAssignmentComponent implements OnInit {
     ({
       name: new FormControl('',Validators.required),
       description: new FormControl(''),
-      dueDate: new FormControl(''),
-      givenDate: new FormControl(''),
-      progress: new FormControl(1,Validators.min(1))
+      dueDate: new FormControl('datePickerControl',Validators.required),
+      givenDate: new FormControl('datePickerControl',Validators.required),
+      progress: new FormControl(1,Validators.required)
     });
   }
     
@@ -41,8 +41,7 @@ export class AddAssignmentComponent implements OnInit {
         {
           this.router.navigate(['/save-assignment']);
         }
-      );  //call function to add assignment
-      // this.router.navigate(['/save-assignment']);
+      );  
       //this.newFormItem.reset();//clear form
     }
     else
@@ -50,6 +49,7 @@ export class AddAssignmentComponent implements OnInit {
       console.log(" Add assignment title");
     }
   } 
+  
 }
   
 

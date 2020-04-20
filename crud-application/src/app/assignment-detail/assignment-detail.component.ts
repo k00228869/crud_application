@@ -24,13 +24,16 @@ export class AssignmentDetailComponent implements OnInit {
           this.assignmentService.getAssignment(+params.get("id")).subscribe(
             (data) =>
             {
+              
               this.assignment = data;
+              console.log(Number(this.assignment.progress));
+              console.log(this.assignment.dueDate);
             }
           );
       }
     );
   }
-
+  
   
 
 }

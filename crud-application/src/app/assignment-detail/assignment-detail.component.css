@@ -12,19 +12,32 @@ button {
   button:hover {
     background-color: #cfd8dc;
   }
-  .title p
+  .title h1
   {
     color:white;
-    padding: 50px,50px, 50px,50px;
+    text-align: center;
+    display:inline-block;
   }
   .title
   {
     height:150px;
     background-color:#3c8add;
   }
-  
   .material-icons
   {
-    color:white;
+    color:#3c8add;
+    padding:30px;
+    
   }
-  
+
+  a .material-icons
+  {
+    color:white;
+    left:20%;
+    display:inline-block;
+  }
+  .title a
+  {
+    width:30px;
+    padding:0;
+  }

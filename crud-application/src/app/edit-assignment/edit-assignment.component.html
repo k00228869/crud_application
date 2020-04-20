@@ -5,22 +5,22 @@
         <form class="form-group" *ngIf="updateAssignment" [formGroup]="updateFormItem" (ngSubmit)="onSubmit(updateFormItem.value)">
         <div>
           <label>Title</label>
-          <input type ="text" formControlName="name" placeholder=""/>
+          <input type ="text" class="form-control" formControlName="name" placeholder=""/>
         </div>
   
         <div>
           <label>Description</label>
-          <input type ="text"  formControlName="description" placeholder=""/>
+          <input type ="text" class="form-control" formControlName="description" placeholder=""/>
         </div>
   
         <div>
           <label>Due Date</label>
-          <input type="date" formControlName="dueDate" placeholder="yyyy-mm-dd"/>
+          <input type="date" class="datepicker" class="form-control" formControlName="dueDate" placeholder="yyyy-mm-dd"/>
         </div>
   
         <div>
           <label>Given Date</label>
-          <input type="date" formControlName="givenDate" placeholder=""/>
+          <input type="date" class="datepicker" class="form-control" formControlName="givenDate" />
         </div>
   
         <div>

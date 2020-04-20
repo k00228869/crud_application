@@ -42,7 +42,7 @@ export class EditAssignmentComponent implements OnInit {
     this.updateFormItem = this.formBuilder.group({
       name: new FormControl('',Validators.required),
       description: new FormControl(''),
-      dueDate: new FormControl(''),
+      dueDate: new FormControl('datePickerControl'),
       givenDate: new FormControl({value:'', disabled: true}),
       progress: new FormControl(1,Validators.min(1))
     });
@@ -56,7 +56,6 @@ export class EditAssignmentComponent implements OnInit {
       this.updateAssignment.name = updatedAssignment.name;
       this.updateAssignment.description = updatedAssignment.description;
       this.updateAssignment.dueDate = updatedAssignment.dueDate;
-      this.updateAssignment.givenDate = updatedAssignment.givenDate;
       this.updateAssignment.progress = updatedAssignment.progress;
 
       this.assignmentService.updateAssignment(this.updateAssignment).subscribe(
