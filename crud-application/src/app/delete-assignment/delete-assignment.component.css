@@ -1,0 +1,21 @@
+.cancelBut {
+    background-color: #3e8de2;
+  }
+  button:hover {
+    background-color: #cfd8dc;
+    color:black;
+  }
+
+  button
+  {
+    background-color: #a2a8ad;
+    margin-top: 20px;
+    font-family: Arial;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    cursor: hand;
+    margin: 0 0 2em 0;
+    color:white;
+  }

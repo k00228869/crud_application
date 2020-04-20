@@ -15,8 +15,8 @@ button {
   .title h1
   {
     color:white;
-    text-align: center;
     display:inline-block;
+    margin-left:45%;
   }
   .title
   {
@@ -27,17 +27,14 @@ button {
   {
     color:#3c8add;
     padding:30px;
-    
   }
 
   a .material-icons
   {
     color:white;
-    left:20%;
-    display:inline-block;
+    display:block;
+    margin-left:90%;
+    margin-top:-6%;
+    padding-bottom:100px;
   }
-  .title a
-  {
-    width:30px;
-    padding:0;
-  }
+  

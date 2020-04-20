@@ -2,7 +2,7 @@
     <div class="row" class="title">
         <div class="col-sm-12">
             <h1>{{assignment.name}}</h1>
-            <a  routerLink="/edit/{{ assignment.id }}"><span class="material-icons">create</span></a>
+            <a  routerLink="/edit/{{ assignment.id }}"><span class="material-icons" class="edit">create</span></a>
             <a  routerLink="/delete/{{ assignment.id }}"><span class="material-icons">delete</span></a>
         </div>
     </div>
@@ -10,11 +10,8 @@
     <div class="row" class="descrip">
         <div class="col-sm-12">
             
-
-            <label>Progress</label>
-            
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuetext="80" style="width:90%" aria-valuemin="10" aria-valuemax="100">{{assignment.progress}} %</div>
+                <div class="progress-bar" role="progressbar" aria-valuetext="80" style="width:90%" aria-valuemin="10" aria-valuemax="100">{{assignment.progress}} % Complete</div>
             </div>
 
             <p><span class="material-icons">event</span>Due Date {{assignment.givenDate}}</p>

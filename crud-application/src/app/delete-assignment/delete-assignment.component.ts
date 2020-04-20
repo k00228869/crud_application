@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { iAssignment } from 'src/assignment';
 import { AssignmentService } from '../assignment.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-delete-assignment',
@@ -18,7 +19,8 @@ export class DeleteAssignmentComponent implements OnInit {
     private assignmentService: AssignmentService,
     private route:ActivatedRoute,
     private formBuilder:FormBuilder,
-    private router:Router) { }
+    private router:Router,
+    private location:Location) { }
 
   ngOnInit()
   {
@@ -51,5 +53,9 @@ export class DeleteAssignmentComponent implements OnInit {
       );
       
     }
+  }
+  cancel()
+  {
+    this.location.back();
   }
 }
