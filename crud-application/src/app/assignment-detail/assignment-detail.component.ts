@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { iAssignment } from 'src/assignment';
 import { AssignmentService } from '../assignment.service';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-assignment-detail',
@@ -14,7 +15,8 @@ export class AssignmentDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private assignmentService: AssignmentService) { }
+    private assignmentService: AssignmentService,
+    private location: Location) { }
 
   ngOnInit() {
     
@@ -34,6 +36,9 @@ export class AssignmentDetailComponent implements OnInit {
     );
   }
   
-  
+  cancel()
+  {
+    this.location.back();
+  }
 
 }

@@ -19,15 +19,16 @@
     width: 25px;
     height: 25px;
     border-radius: 25px;
-    background:#3e8de2;
+    background:#007bff;
   }
 
   button
   {
       color:white;
       border-radius: 10px;
+
       margin-top:30px;
-      margin-left:280px;
+      /*margin-left:280px; */
   }
 
   button:hover
@@ -36,3 +37,8 @@
     background-color: rgb(247, 239, 239);
     left: .1em;
   }
+
+  /* .cancelBut
+  {
+
+  } */

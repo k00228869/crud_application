@@ -1,8 +1,12 @@
 <div class="container">
-  <div class="row">
+  <div class="row" class="title">
     <div class="col-m-12">
-      <div class="header"></div>
+      <h1 style ="text-align:center; color:white;">Add An Assignment</h1>
+    </div>
+  </div>
 
+    <div class="row">
+      <div class="col-m-12">
       <form class="form-group" [formGroup]="newFormItem" (ngSubmit)="onSubmit(newFormItem.value)">
         <div>
           <label>Title</label>
@@ -29,6 +33,7 @@
           <input class="slider" type="range" formControlName="progress" min="1" max="100"> 
           <!-- <p>{{assignment.progress}}<b>%</b></p> -->
         </div>
+        <button class="cancelBut" type="button" (click)="cancel()">Cancel</button>
         <button type="submit">Save</button>
       </form>
     </div>

@@ -3,7 +3,7 @@ import{ ActivatedRoute, Router } from '@angular/router';
 import { AssignmentService } from '../assignment.service';
 import { iAssignment } from 'src/assignment';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-edit-assignment',
@@ -19,7 +19,8 @@ export class EditAssignmentComponent implements OnInit {
     private route:ActivatedRoute,
     private formBuilder:FormBuilder,
     private router:Router,
-    private assignmentService: AssignmentService
+    private assignmentService: AssignmentService,
+    private location:Location
   ) { }
   
   ngOnInit() {
@@ -68,6 +69,11 @@ export class EditAssignmentComponent implements OnInit {
     else{
       console.log("add Title");
     }
+  }
+
+  cancel()
+  {
+    this.location.back();
   }
 
 }

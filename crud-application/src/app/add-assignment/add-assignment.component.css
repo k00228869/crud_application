@@ -14,12 +14,11 @@
 
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    appearance: none;
     cursor: pointer;
     width: 25px;
     height: 25px;
     border-radius: 25px;
-    background:#3e8de2;
+    background:#007bff;
   }
 
   button
@@ -37,14 +36,13 @@
     left: .1em;
   }
 
-  .header
+  .form-group
   {
-    background-color:#3c8add ;
-    height:20%;
     width:100%;
   }
 
-  .form-group
+  .title
   {
-    width:768px;
+    height:180px;
+    background-color:#007bff;
   }

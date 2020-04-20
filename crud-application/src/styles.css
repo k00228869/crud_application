@@ -2,7 +2,7 @@
 
   h1
   {
-    color: rgb(51, 101, 151);
+    color: #007bff;
     font-family: Arial, Helvetica;
     font-size: 250%;
   }
@@ -36,7 +36,7 @@
     border:none;
     margin-top: 20px;
     font-family: Arial;
-    background-color:#3e8de2; 
+    background-color:#007bff; 
     padding: 15px 15px;
     cursor: pointer; cursor: hand;
     border-radius: 10px;
