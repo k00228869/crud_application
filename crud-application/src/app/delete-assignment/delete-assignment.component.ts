@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { iAssignment } from 'src/assignment';
 import { AssignmentService } from '../assignment.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-delete-assignment',
@@ -19,16 +19,17 @@ export class DeleteAssignmentComponent implements OnInit {
     private assignmentService: AssignmentService,
     private route:ActivatedRoute,
     private formBuilder:FormBuilder,
-    private router:Router) { }
+    private router:Router,
+    private location:Location) { }
 
   ngOnInit()
   {
 
     this.route.paramMap.subscribe(
       (params)=> {
-        // JH = getAssignmemt returns an Observable so we must subscribe to it
         this.assignmentService.getAssignment(+params.get("id")).subscribe(
-          (data) => {
+          (data)=> 
+          {
             this.deleteAssignment = data;
           }
         );
@@ -41,10 +42,20 @@ export class DeleteAssignmentComponent implements OnInit {
 
   }
   public confirmDeletion(formValues:any):void{
+    console.log(JSON.stringify(formValues))
     if(formValues.confirmDelete =="WDF2020")
     {
-      this.assignmentService.deleteAssignment(this.deleteAssignment);
-      this.router.navigate(['/save-assignments']);
+      this.assignmentService.deleteAssignment(this.deleteAssignment).subscribe(
+        (data)=>
+        {
+          this.router.navigate(['/save-assignment']);
+        }
+      );
+      
     }
+  }
+  cancel()
+  {
+    this.location.back();
   }
 }

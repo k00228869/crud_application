@@ -3,6 +3,7 @@ import { iAssignment } from 'src/assignment';
 import { AssignmentService } from '../assignment.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -13,11 +14,13 @@ import { Router } from '@angular/router';
 export class AddAssignmentComponent implements OnInit {
   assignment: iAssignment;
   newFormItem: FormGroup;
+  
 
   constructor(
     private formBuilder:FormBuilder,
+    private router:Router,
     private assignmentService: AssignmentService,
-    private router:Router
+    private location: Location
     //form builder builds form group
     ) { }
 
@@ -26,9 +29,9 @@ export class AddAssignmentComponent implements OnInit {
     ({
       name: new FormControl('',Validators.required),
       description: new FormControl(''),
-      dueDate: new FormControl(''),
-      givenDate: new FormControl(''),
-      progress: new FormControl(1)
+      dueDate: new FormControl('datePickerControl',Validators.required),
+      givenDate: new FormControl('datePickerControl',Validators.required),
+      progress: new FormControl(1,Validators.required)
     });
   }
     
@@ -54,6 +57,11 @@ export class AddAssignmentComponent implements OnInit {
       console.log(" Add assignment title");
     }
   } 
+  cancel()
+  {
+    this.location.back();
+  }
+  
 }
   
 

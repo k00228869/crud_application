@@ -1,38 +1,41 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
+  <div class="row" class="title">
+    <div class="col-m-12">
+      <h1 style ="text-align:center; color:white;">Add An Assignment</h1>
+    </div>
+  </div>
 
+    <div class="row">
+      <div class="col-m-12">
       <form class="form-group" [formGroup]="newFormItem" (ngSubmit)="onSubmit(newFormItem.value)">
-      <div>
-        <label>Title</label>
-        <input type ="text" class="form-control" formControlName="name" placeholder="Assignment Title"/>
-      </div>
+        <div>
+          <label>Title</label>
+          <input type ="text" class="form-control" formControlName="name" placeholder="Assignment Title"/>
+        </div>
 
-      <div>
-        <label>Description</label>
-        <input type ="text"  class="form-control" formControlName="description" placeholder="Assignment description"/>
-      </div>
+        <div>
+          <label>Description</label>
+          <input type ="text"  class="form-control" formControlName="description" placeholder="Assignment description"/>
+        </div>
 
-      <div>
-        <label>Due Date</label>
-        <input type="date" class="datepicker" class="form-control" formControlName="dueDate" placeholder="yyyy-mm-dd"/>
-      </div>
+        <div>
+          <label>Due Date</label>
+          <input type="date" class="datepicker" class="form-control" formControlName="dueDate" placeholder="yyyy-mm-dd"/>
+        </div>
 
-      <div>
-        <label>Given Date</label>
-        <input type="date" class="datepicker" class="form-control" formControlName="givenDate" placeholder="yyyy-mm-dd"/>
-      </div>
+        <div>
+          <label>Given Date</label>
+          <input type="date" class="datepicker" class="form-control" formControlName="givenDate" placeholder="yyyy-mm-dd"/>
+        </div>
 
-      <div>
-        <label>Progress</label>
-        <input class="slider" type="range" formControlName="progress" min="1" max="100"> 
-        <!-- <p>{{assignment.progress}}<b>%</b></p> -->
-      </div>
-
-      <button type="submit">Save</button>
+        <div>
+          <label>Progress</label>
+          <input class="slider" type="range" formControlName="progress" min="1" max="100"> 
+          <!-- <p>{{assignment.progress}}<b>%</b></p> -->
+        </div>
+        <button class="cancelBut" type="button" (click)="cancel()">Cancel</button>
+        <button type="submit">Save</button>
       </form>
     </div>
   </div>
 </div>
-    <!-- <a routerLink="/save-assignment">Save</a> -->
-    <app-assignments></app-assignments>

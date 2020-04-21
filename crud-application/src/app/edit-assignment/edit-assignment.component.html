@@ -1,35 +1,42 @@
 <div class="container">
+  <div class="row" class="title">
+    <div class="col-m-12">
+      <h1 style ="text-align:center; color:white;">Update An Assignment</h1>
+    </div>
+  </div>
+
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-12">
   
-        <form class="form-group" [formGroup]="updateFormItem" (ngSubmit)="onSubmit(updateFormItem.value)">
+        <form class="form-group" *ngIf="updateAssignment" [formGroup]="updateFormItem" (ngSubmit)="onSubmit(updateFormItem.value)">
         <div>
           <label>Title</label>
-          <input type ="text" formControlName="name" placeholder=""/>
+          <input type ="text" class="form-control" formControlName="name" placeholder=""/>
         </div>
   
         <div>
           <label>Description</label>
-          <input type ="text"  formControlName="description" placeholder=""/>
+          <input type ="text" class="form-control" formControlName="description" placeholder=""/>
         </div>
   
         <div>
           <label>Due Date</label>
-          <input type="date" formControlName="dueDate" placeholder="yyyy-mm-dd"/>
+          <input type="date" class="datepicker" class="form-control" formControlName="dueDate" placeholder="yyyy-mm-dd"/>
         </div>
   
         <div>
           <label>Given Date</label>
-          <input type="date" formControlName="givenDate" placeholder=""/>
+          <input type="date" class="datepicker" class="form-control" formControlName="givenDate" />
         </div>
   
         <div>
           <label>Progress:</label>
           <input class="slider" type="range" formControlName="progress" min="1" max="100" value="50">
         </div>
-  
+
+        <button class="cancelBut" type="button" (click)="cancel()">Cancel</button>
         <button type="submit">Update</button>
-        <!-- <button (click)="onCancel()">Cancel</button> -->
+        
         </form>
       </div>
     </div>

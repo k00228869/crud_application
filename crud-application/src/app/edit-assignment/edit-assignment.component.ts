@@ -3,7 +3,7 @@ import{ ActivatedRoute, Router } from '@angular/router';
 import { AssignmentService } from '../assignment.service';
 import { iAssignment } from 'src/assignment';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-edit-assignment',
@@ -19,7 +19,8 @@ export class EditAssignmentComponent implements OnInit {
     private route:ActivatedRoute,
     private formBuilder:FormBuilder,
     private router:Router,
-    private assignmentService: AssignmentService
+    private assignmentService: AssignmentService,
+    private location:Location
   ) { }
   
   ngOnInit() {
@@ -42,7 +43,7 @@ export class EditAssignmentComponent implements OnInit {
     this.updateFormItem = this.formBuilder.group({
       name: new FormControl('',Validators.required),
       description: new FormControl(''),
-      dueDate: new FormControl(''),
+      dueDate: new FormControl('datePickerControl'),
       givenDate: new FormControl({value:'', disabled: true}),
       progress: new FormControl(1,Validators.min(1))
     });
@@ -56,7 +57,6 @@ export class EditAssignmentComponent implements OnInit {
       this.updateAssignment.name = updatedAssignment.name;
       this.updateAssignment.description = updatedAssignment.description;
       this.updateAssignment.dueDate = updatedAssignment.dueDate;
-      this.updateAssignment.givenDate = updatedAssignment.givenDate;
       this.updateAssignment.progress = updatedAssignment.progress;
 
       this.assignmentService.updateAssignment(this.updateAssignment).subscribe(
@@ -69,6 +69,11 @@ export class EditAssignmentComponent implements OnInit {
     else{
       console.log("add Title");
     }
+  }
+
+  cancel()
+  {
+    this.location.back();
   }
 
 }

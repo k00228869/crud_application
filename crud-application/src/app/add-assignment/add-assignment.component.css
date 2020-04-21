@@ -14,12 +14,11 @@
 
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    appearance: none;
     cursor: pointer;
     width: 25px;
     height: 25px;
     border-radius: 25px;
-    background:#3e8de2;
+    background:#007bff;
   }
 
   button
@@ -35,4 +34,15 @@
     color: black;
     background-color: rgb(247, 239, 239);
     left: .1em;
+  }
+
+  .form-group
+  {
+    width:100%;
+  }
+
+  .title
+  {
+    height:180px;
+    background-color:#007bff;
   }
