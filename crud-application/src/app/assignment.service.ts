@@ -34,8 +34,9 @@ export class AssignmentService {
   {
     // assignment.id = this.nextId;
     // this.nextId++;
+    console.log("Adding the assignment");
     return this.http.post<iAssignment>(this.assignmentsUrl, assignment, this.httpOptions); //posting to db
-    console.log("assignment added");
+    
   }
 
   public deleteAssignment(assignment:iAssignment):Observable<iAssignment>

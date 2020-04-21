@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { iAssignment } from 'src/assignment';
 import { AssignmentService } from '../assignment.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class AddAssignmentComponent implements OnInit {
 
   constructor(
     private formBuilder:FormBuilder,
-    private assignmentService: AssignmentService
+    private assignmentService: AssignmentService,
+    private router:Router
     //form builder builds form group
     ) { }
 
@@ -26,7 +28,7 @@ export class AddAssignmentComponent implements OnInit {
       description: new FormControl(''),
       dueDate: new FormControl(''),
       givenDate: new FormControl(''),
-      progress: new FormControl(1,Validators.min(1))
+      progress: new FormControl(1)
     });
   }
     
@@ -34,9 +36,18 @@ export class AddAssignmentComponent implements OnInit {
   {
     if(this.newFormItem.status === 'VALID')
     {
-      this.assignmentService.addAssignment(this.assignment);  //call function to add assignment
-      // this.router.navigate(['/save-assignment']);
-      //this.newFormItem.reset();//clear form
+      //call function to add assignment.
+      // JH - This returns an observable so we need to subscribe to it. The addAssignment function returns
+      // an observable which we need to subscribe to, then some time later the observable will call the 
+      // arrow function we passed into the subscribe function and pass in the "data" which is the assignment
+      // that has just been successfully added
+      this.assignmentService.addAssignment(assignment).subscribe(
+        (data) => {
+          this.newFormItem.reset();//clear form
+          this.router.navigate(['/save-assignment']);
+        }
+      );
+      
     }
     else
     {
