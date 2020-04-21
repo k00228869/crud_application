@@ -13,7 +13,12 @@ import { Location } from '@angular/common';
 export class EditAssignmentComponent implements OnInit {
   updateAssignment:iAssignment;
   updateFormItem:FormGroup;
-
+  newVal:number;
+  
+  onChange(event)
+  {
+    this.newVal = event.value;
+  }
 
   constructor(
     private route:ActivatedRoute,

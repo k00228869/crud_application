@@ -43,7 +43,7 @@ export class DeleteAssignmentComponent implements OnInit {
   }
   public confirmDeletion(formValues:any):void{
     console.log(JSON.stringify(formValues))
-    if(formValues.confirmDelete =="WDF2020")
+    if(formValues.confirmDelete =="WDF2020 ||wdf2020 ")
     {
       this.assignmentService.deleteAssignment(this.deleteAssignment).subscribe(
         (data)=>

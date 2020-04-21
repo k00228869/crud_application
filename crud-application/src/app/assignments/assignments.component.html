@@ -1,7 +1,11 @@
 <div class="container">
+    <div class="row" class="title">
+        <div class="col-m-12">
+          <h1 style ="text-align:center; color:white;">Assignments Due</h1>
+        </div>
+      </div>
     <div class="row">
-      <div class="col-sm-4">
-          <h1>Assignments Due</h1>
+      <div class="col-sm-12">
             <button ><a routerLink="/add-assignment"><b>+</b> Assignment</a></button>
             <ul class="assignments">
                 <li *ngFor="let assignment of assignment">

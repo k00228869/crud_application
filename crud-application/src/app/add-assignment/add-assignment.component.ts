@@ -15,6 +15,12 @@ export class AddAssignmentComponent implements OnInit {
   assignment: iAssignment;
   newFormItem: FormGroup;
   
+  newVal:number=30;
+
+  onChange(event)
+  {
+    this.newVal = event.value;
+  }
 
   constructor(
     private formBuilder:FormBuilder,
@@ -61,7 +67,13 @@ export class AddAssignmentComponent implements OnInit {
   {
     this.location.back();
   }
-  
+  // formatLabel(value: number) {
+  //   if (value >= 1000) {
+  //     return Math.round(value / 1000) + '%';
+  //   }
+
+  //   return value;
+  // }
 }
   
 

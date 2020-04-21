@@ -2,7 +2,7 @@
     margin: 0 0 2em 0;
     list-style-type: none;
     padding: 0;
-    width: 65em;
+    max-width: 79em;
   }
   .assignments li {
     cursor: pointer;
@@ -25,7 +25,7 @@
     text-decoration: none;
     position: relative;
     display: block;
-    width: 250px;
+    
     line-height: 1em;
   }
 
@@ -56,9 +56,6 @@
     margin-top:30px;
   }
 
-  button:hover
-  {
-    color: black;
-    background-color: rgb(247, 239, 239);
-    left: .1em;
-  }
+  
+
+  
