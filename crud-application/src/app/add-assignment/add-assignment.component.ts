@@ -12,26 +12,21 @@ import { Location } from '@angular/common';
   styleUrls: ['./add-assignment.component.css']
 })
 export class AddAssignmentComponent implements OnInit {
-  assignment: iAssignment;
+  newAssignment: iAssignment;
   newFormItem: FormGroup;
-  
-  newVal:number=30;
 
-  onChange(event)
-  {
-    this.newVal = event.value;
-  }
+ 
 
   constructor(
     private formBuilder:FormBuilder,
     private router:Router,
     private assignmentService: AssignmentService,
     private location: Location
-    //form builder builds form group
+    
     ) { }
 
   ngOnInit() {
-    this.newFormItem = this.formBuilder.group
+    this.newFormItem = this.formBuilder.group //form builder builds form group and stores it in a formgroup variable
     ({
       name: new FormControl('',Validators.required),
       description: new FormControl(''),
@@ -41,39 +36,29 @@ export class AddAssignmentComponent implements OnInit {
     });
   }
     
-  public onSubmit(assignment:iAssignment):void
+  public onSubmit(newAssignment:iAssignment):void
   {
-    if(this.newFormItem.status === 'VALID')
+    if(this.newFormItem.status === 'VALID') //if the form is valid
     {
-      //call function to add assignment.
+      
       // JH - This returns an observable so we need to subscribe to it. The addAssignment function returns
       // an observable which we need to subscribe to, then some time later the observable will call the 
       // arrow function we passed into the subscribe function and pass in the "data" which is the assignment
       // that has just been successfully added
-      this.assignmentService.addAssignment(assignment).subscribe(
+      this.assignmentService.addAssignment(newAssignment).subscribe( //call function to add assignment.
         (data) => {
           this.newFormItem.reset();//clear form
-          this.router.navigate(['/save-assignment']);
+          this.router.navigate(['/save-assignment']); //navigate to the page that displays all assignments
         }
       );
-      
     }
-    else
-    {
-      console.log(" Add assignment title");
-    }
+
   } 
   cancel()
   {
-    this.location.back();
+    this.location.back(); //navigate back to last location
   }
-  // formatLabel(value: number) {
-  //   if (value >= 1000) {
-  //     return Math.round(value / 1000) + '%';
-  //   }
 
-  //   return value;
-  // }
 }
   
 

@@ -8,7 +8,8 @@
       <div class="col-sm-12">
             <button ><a routerLink="/add-assignment"><b>+</b> Assignment</a></button>
             <ul class="assignments">
-                <li *ngFor="let assignment of assignment">
+                <li *ngFor="let assignment of assignmentList"> 
+                    <!-- displays each assignment of the assignmentList -->
                     <a routerLink="/assignment/{{ assignment.id }}">
                         <span class="badge">{{assignment.progress}}%</span>
                         {{assignment.name}}

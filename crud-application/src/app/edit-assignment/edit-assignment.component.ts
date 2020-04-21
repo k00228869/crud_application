@@ -13,12 +13,6 @@ import { Location } from '@angular/common';
 export class EditAssignmentComponent implements OnInit {
   updateAssignment:iAssignment;
   updateFormItem:FormGroup;
-  newVal:number;
-  
-  onChange(event)
-  {
-    this.newVal = event.value;
-  }
 
   constructor(
     private route:ActivatedRoute,
@@ -35,6 +29,7 @@ export class EditAssignmentComponent implements OnInit {
           this.assignmentService.getAssignment(+params.get("id")).subscribe(
           (data) => {
             this.updateAssignment = data;
+            //set formcontrol values to 
             this.updateFormItem.controls['name'].setValue(this.updateAssignment.name)
             this.updateFormItem.controls['description'].setValue(this.updateAssignment.description)
             this.updateFormItem.controls['dueDate'].setValue(this.updateAssignment.dueDate)
@@ -45,7 +40,7 @@ export class EditAssignmentComponent implements OnInit {
       }
     );
 
-    this.updateFormItem = this.formBuilder.group({
+    this.updateFormItem = this.formBuilder.group({ // build form group and store in deleteform
       name: new FormControl('',Validators.required),
       description: new FormControl(''),
       dueDate: new FormControl('datePickerControl'),
@@ -67,18 +62,15 @@ export class EditAssignmentComponent implements OnInit {
       this.assignmentService.updateAssignment(this.updateAssignment).subscribe(
         (data)=>{
 
-          this.router.navigate(['/save-assignment']);
+          this.router.navigate(['/save-assignment']); //navigate to the page that displays all assignments
         }
       );
-    }
-    else{
-      console.log("add Title");
     }
   }
 
   cancel()
   {
-    this.location.back();
+    this.location.back(); //navigate back to last location
   }
 
 }

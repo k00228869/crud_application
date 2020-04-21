@@ -15,7 +15,7 @@ export class InMemoryDatabaseService implements InMemoryDbService
       {id:3, name: 'WDF app', description: 'description of the third assignment',dueDate: new Date(new Date().getFullYear(),new Date().getMonth() , new Date().getDay()), givenDate:new Date(new Date().getFullYear(),new Date().getMonth() , new Date().getDay()), progress:30}
       
     ];
-    return { assignments };
+    return { assignments }; // return array
   }
 
 }

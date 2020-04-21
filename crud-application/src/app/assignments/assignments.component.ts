@@ -10,7 +10,7 @@ import { iAssignment } from 'src/assignment';
 })
 export class AssignmentsComponent implements OnInit {
   
-  public assignment: iAssignment[]; //can store an array of iassignments
+  public assignmentList: iAssignment[]; //can store an array of iassignments
   
   constructor(private assignmentService: AssignmentService) { }
 
@@ -19,7 +19,7 @@ export class AssignmentsComponent implements OnInit {
     this.assignmentService.getAssignments().subscribe( //returns observable
       (data) => 
       {
-        this.assignment = data; //assignments variable is equal to the data returned
+        this.assignmentList = data; //assignmentList variable is equal to the data returned
       }
     );
   }

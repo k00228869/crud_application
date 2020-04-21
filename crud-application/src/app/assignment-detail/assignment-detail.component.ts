@@ -10,8 +10,9 @@ import { Location } from '@angular/common';
   styleUrls: ['./assignment-detail.component.css']
 })
 export class AssignmentDetailComponent implements OnInit {
-
-  assignment:iAssignment;
+  public width:number;
+  assignmentDetail:iAssignment;
+  
 
   constructor(
     private route: ActivatedRoute,
@@ -23,22 +24,22 @@ export class AssignmentDetailComponent implements OnInit {
     this.route.paramMap.subscribe( //notify change in id
       (params) => //pass id parameter on url
       {
-          this.assignmentService.getAssignment(+params.get("id")).subscribe(
+          this.assignmentService.getAssignment(+params.get("id")).subscribe( //
             (data) =>
             {
-              
-              this.assignment = data;
-              console.log(Number(this.assignment.progress));
-              console.log(this.assignment.dueDate);
+              this.assignmentDetail = data; //stores the observable in data
+              this.width = this.assignmentDetail.progress; //sets the width of the progress bar equal to the value of the progress set on the slider
             }
           );
       }
     );
   }
   
+  
+
   cancel()
   {
-    this.location.back();
+    this.location.back(); //navigate back to last location
   }
 
 }

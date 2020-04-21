@@ -31,7 +31,8 @@
         <div>
           <label>Progress</label>
           &nbsp;
-          <p><input class="slider" type="range" #newVal (change)="onChange($event)" [value]="newVal" formControlName="progress" min="1" max="100">&nbsp; {{newVal.value}}<b>%</b></p> 
+          <p><input class="slider" type="range"  #newVal formControlName="progress" min="1" max="100" >&nbsp; {{newVal.value}}<b>%</b></p> 
+          <!-- the input Value is stored in newVal, when the value changes the onchange is triggered which changes -->
         </div>
 
         <button class="cancelBut" type="button" (click)="cancel()">Cancel</button>

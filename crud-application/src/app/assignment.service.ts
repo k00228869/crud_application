@@ -7,7 +7,8 @@ import{ iAssignment } from '../assignment';
   providedIn: 'root'
 })
 export class AssignmentService {
-  // private nextId:number = 4;
+
+  //variable to hold URL
   private assignmentsUrl: string = 'api/assignments'; //url to api
 
   httpOptions = {
@@ -16,39 +17,31 @@ export class AssignmentService {
   };
 
   constructor(private http: HttpClient) 
-  { 
-    console.log("service constructing");
-  }
+  {}
 
   public getAssignments():Observable<iAssignment[]>
   {
-    return this.http.get<iAssignment[]>(this.assignmentsUrl, this.httpOptions); //get array of assignments from the server
+    return this.http.get<iAssignment[]>(this.assignmentsUrl, this.httpOptions); //return array of assignments from the server
   }
 
   public getAssignment(id:number):Observable<iAssignment> //constructs request url with an assignment id and returns single assignment
   {
-    return this.http.get<iAssignment>(this.assignmentsUrl + "/" + id, this.httpOptions); //posting to database, httpOp func means format is json
+    return this.http.get<iAssignment>(this.assignmentsUrl + "/" + id, this.httpOptions); //get assignment that matches id in url 
   }
 
-  public addAssignment(assignment:iAssignment):Observable<iAssignment>
+  public addAssignment(newAssignment:iAssignment):Observable<iAssignment>
   {
-    // assignment.id = this.nextId;
-    // this.nextId++;
-    console.log("Adding the assignment");
-    return this.http.post<iAssignment>(this.assignmentsUrl, assignment, this.httpOptions); //posting to db
-    
+    return this.http.post<iAssignment>(this.assignmentsUrl, newAssignment, this.httpOptions); //posting new assignment to db
   }
 
-  public deleteAssignment(assignment:iAssignment):Observable<iAssignment>
+  public deleteAssignment(deleteAssignment:iAssignment):Observable<iAssignment>
   {
-    console.log("assignment deleted");
-    return this.http.delete<iAssignment>(this.assignmentsUrl + "/" + assignment.id, this.httpOptions);
+    return this.http.delete<iAssignment>(this.assignmentsUrl + "/" + deleteAssignment.id, this.httpOptions); //delete assignment that matches id in url 
   }
 
   public updateAssignment(updatedAssignment:iAssignment):Observable<iAssignment>
   {
-   console.log("assignment updated");
-   return this.http.put<iAssignment>(this.assignmentsUrl, updatedAssignment, this.httpOptions); 
+   return this.http.put<iAssignment>(this.assignmentsUrl, updatedAssignment, this.httpOptions); //update assignment values with new values
   }
 
   

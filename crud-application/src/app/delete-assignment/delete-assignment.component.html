@@ -8,7 +8,8 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="popup">
-            <h3>Please enter your password to delete an assignment</h3>
+            <h3>Are you sure you want to delete this?<br>
+              Please enter your password to delete an assignment</h3>
                 <form class="form-group" [formGroup]="deleteForm" (ngSubmit)="confirmDeletion(deleteForm.value)" class="form-group">
                     <input type="text" class="form-control" placeholder="Password" formControlName="confirmDelete">
                     

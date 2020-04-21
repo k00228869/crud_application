@@ -50,12 +50,15 @@
     border-radius: 4px 0 0 4px;
   }
   button{
-    border-radius:10px;
+    border-radius:6px;
     margin-left:5px;
     margin-bottom:30px;
     margin-top:30px;
   }
 
+  b{
+    font-size:22px;
+  }
   
 
   
