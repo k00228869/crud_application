@@ -8,8 +8,8 @@ import { AssignmentDetailComponent } from './assignment-detail/assignment-detail
 import { AddAssignmentComponent } from './add-assignment/add-assignment.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AssignmentService } from './assignment.service';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDatabaseService }  from './in-memory-database.service';
+// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { InMemoryDatabaseService }  from './in-memory-database.service';
 import { EditAssignmentComponent } from './edit-assignment/edit-assignment.component';
 // JH - this needs to be installed
 //    npm install @ng-bootstrap/ng-bootstrap
@@ -17,7 +17,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeleteAssignmentComponent } from './delete-assignment/delete-assignment.component';
 import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire'
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AngularFireModule } from '@angular/fire';
     ReactiveFormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     NgbModule,
     // HttpClientInMemoryWebApiModule.forRoot(
     //   InMemoryDatabaseService, { dataEncapsulation: false }
