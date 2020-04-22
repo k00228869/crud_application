@@ -16,7 +16,8 @@ import { EditAssignmentComponent } from './edit-assignment/edit-assignment.compo
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeleteAssignmentComponent } from './delete-assignment/delete-assignment.component';
-
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
 
 @NgModule({
   declarations: [
@@ -33,10 +34,11 @@ import { DeleteAssignmentComponent } from './delete-assignment/delete-assignment
     FormsModule,  
     ReactiveFormsModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
     NgbModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDatabaseService, { dataEncapsulation: false }
-      ),
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDatabaseService, { dataEncapsulation: false }
+    //   ),
     BrowserAnimationsModule
   ],
   providers: [AssignmentService],
