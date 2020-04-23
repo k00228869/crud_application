@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyA0ot-uRnweK3xXMD3fA6Upfhn5IBzA2VU',
-    authDomain: 'cmd-2020-shannon-assignment.firebaseapp.com',
-    databaseURL: 'https://cmd-2020-shannon-assignment.firebaseio.com',
-    projectId: 'cmd-2020-shannon-assignment',
-    storageBucket: 'cmd-2020-shannon-assignment.appspot.com',
-    messagingSenderId: '498117313356'
+    apiKey: 'AIzaSyCki6bd64b75s6YaZB0of_lSw-Kr6lUhDg',
+    authDomain: 'shannon-cmd-wdf.firebaseapp.com',
+    databaseURL: 'https://shannon-cmd-wdf.firebaseio.com',
+    projectId: 'shannon-cmd-wdf',
+    storageBucket: 'shannon-cmd-wdf.appspot.com',
+    messagingSenderId: '1041753647308'
   }
 };
 

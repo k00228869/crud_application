@@ -1,5 +1,5 @@
 export interface iAssignment {
-    id:number;
+    id:string;
     name: string;
     description: string;
     dueDate:Date;

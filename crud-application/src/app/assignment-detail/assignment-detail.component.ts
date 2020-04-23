@@ -24,7 +24,7 @@ export class AssignmentDetailComponent implements OnInit {
     this.route.paramMap.subscribe( //notify change in id
       (params) => //pass id parameter on url
       {
-          this.assignmentService.getAssignment(+params.get("id")).subscribe( //
+          this.assignmentService.getAssignment(params.get("id")).subscribe( //
             (data) =>
             {
               this.assignmentDetail = data; //stores the observable in data

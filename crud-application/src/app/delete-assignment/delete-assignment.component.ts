@@ -26,7 +26,7 @@ export class DeleteAssignmentComponent implements OnInit {
   {
     this.route.paramMap.subscribe(
       (params)=> {
-        this.assignmentService.getAssignment(+params.get("id")).subscribe(
+        this.assignmentService.getAssignment(params.get("id")).subscribe(
           (data)=> 
           {
             this.deleteAssignment = data;
