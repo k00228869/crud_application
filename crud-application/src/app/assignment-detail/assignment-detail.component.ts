@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
 })
 export class AssignmentDetailComponent implements OnInit {
   public width:number;
-  assignmentDetail:iAssignment;
+  public assignmentDetail:iAssignment;
   
 
   constructor(

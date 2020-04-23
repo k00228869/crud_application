@@ -12,8 +12,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./add-assignment.component.css']
 })
 export class AddAssignmentComponent implements OnInit {
-  newAssignment: iAssignment;
-  newFormItem: FormGroup;
+  public newAssignment: iAssignment;
+  public newFormItem: FormGroup;
 
  
 

@@ -11,8 +11,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./edit-assignment.component.css']
 })
 export class EditAssignmentComponent implements OnInit {
-  updateAssignment:iAssignment;
-  updateFormItem:FormGroup;
+  public updateAssignment:iAssignment;
+  public updateFormItem:FormGroup;
 
   constructor(
     private route:ActivatedRoute,
@@ -26,7 +26,7 @@ export class EditAssignmentComponent implements OnInit {
     
     this.route.paramMap.subscribe(
       (params) => {
-          this.assignmentService.getAssignment(+params.get("id")).subscribe(
+          this.assignmentService.getAssignment(params.get("id")).subscribe(
           (data) => {
             this.updateAssignment = data;
             //set formcontrol values to 

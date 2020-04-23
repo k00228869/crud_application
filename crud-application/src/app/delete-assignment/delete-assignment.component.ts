@@ -11,8 +11,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./delete-assignment.component.css']
 })
 export class DeleteAssignmentComponent implements OnInit {
-  deleteForm:FormGroup;
-  deleteAssignment:iAssignment;
+  public deleteForm:FormGroup;
+  public deleteAssignment:iAssignment;
 
 
   constructor(
