@@ -32,6 +32,8 @@ export class AssignmentService {
   public addAssignment(newAssignment:iAssignment):Observable<iAssignment>
   {
     return this.http.post<iAssignment>(this.assignmentsUrl, newAssignment, this.httpOptions); //posting new assignment to db
+    //assignment.id = this.firestore.createId();
+    //return from(this.firestore.collection('assignments').doc<iAssignment>(assignment.id).set(assignment));
   }
 
   public deleteAssignment(deleteAssignment:iAssignment):Observable<iAssignment>
