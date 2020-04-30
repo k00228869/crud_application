@@ -24,8 +24,9 @@ export class EditAssignmentComponent implements OnInit {
   
   ngOnInit() {
     
-    this.route.paramMap.subscribe(
-      (params) => {
+    this.route.paramMap.subscribe(//notify change in id 
+      (params) => {//pass id parameter on url
+
           this.assignmentService.getAssignment(params.get("id")).subscribe( //subscribes to the observable, returned by deleteAssignment()
           (data) => { //arrow func gets called and passes in the "data" object
 
@@ -47,7 +48,7 @@ export class EditAssignmentComponent implements OnInit {
       description: new FormControl(''),
       dueDate: new FormControl('datePickerControl'),
       givenDate: new FormControl({value:'', disabled: true}),
-      progress: new FormControl(0,Validators.min(1))// progress must be more than 1%
+      progress: new FormControl(1,Validators.min(1))// progress must be more than 1
     });
   }
 

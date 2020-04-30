@@ -10,12 +10,12 @@ import { DeleteAssignmentComponent } from './delete-assignment/delete-assignment
 
 const routes: Routes = [
   { path: '', component: AssignmentsComponent, pathMatch: 'full'}, //set to full so it doesnt catch any route
-   { path: 'edit/:id', component: EditAssignmentComponent},
-  { path: 'assignment/:id', component: AssignmentDetailComponent},
-  { path: 'add-assignment', component: AddAssignmentComponent},
-  { path: 'assignment-detail/:id', component: AssignmentDetailComponent},
-  { path: 'save-assignment', component: AssignmentsComponent},
-  { path: 'delete/:id', component: DeleteAssignmentComponent}
+   { path: 'edit/:id', component: EditAssignmentComponent},//edit assignment route
+  { path: 'assignment/:id', component: AssignmentDetailComponent},//single assignment route
+  { path: 'add-assignment', component: AddAssignmentComponent},//add assignment route
+  { path: 'assignment-detail/:id', component: AssignmentDetailComponent}, 
+  { path: 'save-assignment', component: AssignmentsComponent},//all assignments route
+  { path: 'delete/:id', component: DeleteAssignmentComponent}//delete assignment route
 ];
 
 @NgModule({

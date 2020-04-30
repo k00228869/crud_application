@@ -24,8 +24,9 @@ export class DeleteAssignmentComponent implements OnInit {
 
   ngOnInit()
   {
-    this.route.paramMap.subscribe(
-      (params)=> {//passes in id from
+    this.route.paramMap.subscribe( //notify change in id 
+      (params)=> { //pass id parameter on url
+        
         this.assignmentService.getAssignment(params.get("id")).subscribe( //subscribe to the observable
           (data)=> 
           {
