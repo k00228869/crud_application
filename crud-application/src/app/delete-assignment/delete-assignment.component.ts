@@ -25,26 +25,26 @@ export class DeleteAssignmentComponent implements OnInit {
   ngOnInit()
   {
     this.route.paramMap.subscribe(
-      (params)=> {
-        this.assignmentService.getAssignment(params.get("id")).subscribe(
+      (params)=> {//passes in id from
+        this.assignmentService.getAssignment(params.get("id")).subscribe( //subscribe to the observable
           (data)=> 
           {
-            this.deleteAssignment = data;
+            this.deleteAssignment = data; // deleteAssignment equal to data returned
           }
         );
       }
     );
 
-    this.deleteForm = this.formBuilder.group({ // build form group(and a new formControl variable) and store in deleteform
+    this.deleteForm = this.formBuilder.group({ // build form group + store in deleteform
       confirmDelete: new FormControl()
     });
 
   }
   public confirmDeletion(formValues:any):void{
-    if(formValues.confirmDelete =="WDF2020" ||"wdf2020") //if either passwords were passed in, delete the assignment 
+    if(formValues.confirmDelete =="WDF2020" ||"wdf2020") //if either passwords are passed in, delete the assignment 
     {
-      this.assignmentService.deleteAssignment(this.deleteAssignment).subscribe( //subscribe to the observable
-        (data)=>
+      this.assignmentService.deleteAssignment(this.deleteAssignment).subscribe( //subscribes to the observable, returned by deleteAssignment()
+        (data)=>//arrow func gets called and passes in the "data" object
         {
           this.router.navigate(['/save-assignment']); //navigate to the page that displays all assignments
         }

@@ -26,10 +26,12 @@ export class EditAssignmentComponent implements OnInit {
     
     this.route.paramMap.subscribe(
       (params) => {
-          this.assignmentService.getAssignment(params.get("id")).subscribe(
-          (data) => {
-            this.updateAssignment = data;
-            //set formcontrol values to 
+          this.assignmentService.getAssignment(params.get("id")).subscribe( //subscribes to the observable, returned by deleteAssignment()
+          (data) => { //arrow func gets called and passes in the "data" object
+
+            this.updateAssignment = data; // updateAssignment equal to data returned
+            
+            //setting values of formcontrols to the values of updateAssignment
             this.updateFormItem.controls['name'].setValue(this.updateAssignment.name)
             this.updateFormItem.controls['description'].setValue(this.updateAssignment.description)
             this.updateFormItem.controls['dueDate'].setValue(this.updateAssignment.dueDate)
@@ -40,29 +42,32 @@ export class EditAssignmentComponent implements OnInit {
       }
     );
 
-    this.updateFormItem = this.formBuilder.group({ // build form group and store in deleteform
+    this.updateFormItem = this.formBuilder.group({ // build formgroup + store object in updateFormItem
       name: new FormControl('',Validators.required),
       description: new FormControl(''),
       dueDate: new FormControl('datePickerControl'),
       givenDate: new FormControl({value:'', disabled: true}),
-      progress: new FormControl(1,Validators.min(1))
+      progress: new FormControl(0,Validators.min(1))// progress must be more than 1%
     });
   }
 
   public onSubmit(updatedAssignment:iAssignment):void
   {
-    if(this.updateFormItem.status=='VALID')
+    if(this.updateFormItem.status=='VALID')//if all fields of the formgroup are valid
     {
       console.log("updating assignment");
+
+      //setting values entered in form + storing in updateAssignment
       this.updateAssignment.name = updatedAssignment.name;
       this.updateAssignment.description = updatedAssignment.description;
       this.updateAssignment.dueDate = updatedAssignment.dueDate;
       this.updateAssignment.progress = updatedAssignment.progress;
 
-      this.assignmentService.updateAssignment(this.updateAssignment).subscribe(
+      //call service method to update the db with new values
+      this.assignmentService.updateAssignment(this.updateAssignment).subscribe( 
         (data)=>{
-
-          this.router.navigate(['/save-assignment']); //navigate to the page that displays all assignments
+          //Then navigate to the page that displays all assignments 
+          this.router.navigate(['/save-assignment']); 
         }
       );
     }
@@ -70,7 +75,7 @@ export class EditAssignmentComponent implements OnInit {
 
   cancel()
   {
-    this.location.back(); //navigate back to last location
+    this.location.back(); //navigate back to last location in platforms history
   }
 
 }

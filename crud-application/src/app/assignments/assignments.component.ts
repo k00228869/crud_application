@@ -16,10 +16,10 @@ export class AssignmentsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.assignmentService.getAssignments().subscribe( //returns observable
-      (data) => 
+    this.assignmentService.getAssignments().subscribe( //subscribes to the observable, returned by getAssignments()
+      (data) => //arrow func gets called and passes in the "data" object
       {
-        this.assignmentList = data; //assignmentList variable is equal to the data returned
+        this.assignmentList = data; //assignmentList equal to data returned
       }
     );
   }

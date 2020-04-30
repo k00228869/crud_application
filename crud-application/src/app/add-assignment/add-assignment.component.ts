@@ -18,15 +18,14 @@ export class AddAssignmentComponent implements OnInit {
  
 
   constructor(
-    private formBuilder:FormBuilder,
-    private router:Router,
+    private formBuilder: FormBuilder, 
+    private router: Router,
     private assignmentService: AssignmentService,
     private location: Location
-    
     ) { }
 
   ngOnInit() {
-    this.newFormItem = this.formBuilder.group //form builder builds form group and stores it in a formgroup variable
+    this.newFormItem = this.formBuilder.group // build formgroup + store object in newFormItem
     ({
       name: new FormControl('',Validators.required),
       description: new FormControl(''),
@@ -38,16 +37,12 @@ export class AddAssignmentComponent implements OnInit {
     
   public onSubmit(newAssignment:iAssignment):void
   {
-    if(this.newFormItem.status === 'VALID') //if the form is valid
-    {
-      
-      // JH - This returns an observable so we need to subscribe to it. The addAssignment function returns
-      // an observable which we need to subscribe to, then some time later the observable will call the 
-      // arrow function we passed into the subscribe function and pass in the "data" which is the assignment
-      // that has just been successfully added
-      this.assignmentService.addAssignment(newAssignment).subscribe( //call function to add assignment.
-        (data) => {
-          this.newFormItem.reset();//clear form
+    if(this.newFormItem.status === 'VALID') //if all the form fields are valid
+    {       
+      this.assignmentService.addAssignment(newAssignment).subscribe( //subscribes to the observable, returned by addAssignment()
+        (data) => {//arrow func gets called and passes in the "data" of the new assignment
+
+          this.newFormItem.reset();//reset form
           this.router.navigate(['/save-assignment']); //navigate to the page that displays all assignments
         }
       );

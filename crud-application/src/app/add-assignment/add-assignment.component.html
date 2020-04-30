@@ -9,6 +9,7 @@
     <div class="col-md-12" >
 
       <form class="form-group" [formGroup]="newFormItem" (ngSubmit)="onSubmit(newFormItem.value)">
+        <!-- when form is submitted ngsubmit is triggered, which calls onsubmit -->
         <div>
           <label>Title</label>
           <input type ="text" class="form-control" formControlName="name" placeholder="Assignment Title"/>
@@ -36,6 +37,7 @@
         </div>
 
         <button class="cancelBut" type="button" (click)="cancel()">Cancel</button>
+        
         <button type="submit">Save</button>
       </form>
     </div>

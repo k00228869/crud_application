@@ -9,9 +9,10 @@
             <button ><a routerLink="/add-assignment"><b>+</b> Assignment</a></button>
             <ul class="assignments">
                 <li *ngFor="let assignment of assignmentList"> 
-                    <!-- displays each assignment of the assignmentList -->
+                    <!-- loop through assignmentlist and display each assignment-->
+
                     <a routerLink="/assignment/{{ assignment.id }}">
-                        <span class="badge">{{assignment.progress}}%</span>
+                        <span class="badge">{{assignment.progress}}% </span>
                         {{assignment.name}}
                         
                     </a>
