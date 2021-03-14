@@ -42,7 +42,7 @@ export class DeleteAssignmentComponent implements OnInit {
 
   }
   public confirmDeletion(formValues:any):void{
-    if(formValues.confirmDelete =="WDF2020" || formValues.confirmDelete =="wdf2020") //if either passwords are passed in, delete the assignment 
+    if(formValues.confirmDelete =="WDF2020") //if either passwords are passed in, delete the assignment 
     {
       this.assignmentService.deleteAssignment(this.deleteAssignment).subscribe( //subscribes to the observable, returned by deleteAssignment()
         (data)=>//arrow func gets called and passes in the "data" object
